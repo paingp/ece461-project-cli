@@ -67,7 +67,7 @@ void logError(int errorType, char* command) {
             fputs("\n\n" , fileptr);
             break;
         default:
-            fputs("Unknwon error in execution " , fileptr);
+            fputs("Unknown error in execution " , fileptr);
             fputs("\n\n" , fileptr);
     }
 
