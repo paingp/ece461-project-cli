@@ -21,6 +21,7 @@ int test() {
 
 int url(char* file) {
     return (EXIT_FAILURE);
+    printf("Aditya");
 }
 
 int main(int argc, char *argv[]) {
