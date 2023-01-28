@@ -1,27 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include "cli.h"
 
 using namespace std;
 
-// Function to be used for install command
-int install() {
-    return (EXIT_SUCCESS);
-}
-
-// Function to be used for build command
-int build() {
-    return (EXIT_SUCCESS);
-}
-
 int test() {
-    return (EXIT_SUCCESS);
-}
-
-int url(char* file) {
-    return (EXIT_FAILURE);
-    printf("Aditya");
+    return master_test();
 }
 
 int main(int argc, char *argv[]) {
@@ -41,6 +23,11 @@ int main(int argc, char *argv[]) {
             exit(EXIT_FAILURE);
         }
     }
+    else if(strcmp(argv[1], "test") == 0) {
+        if(test() == EXIT_FAILURE) {
+            exit(EXIT_FAILURE);
+        }
+    }
     else {
         // Validating file name input
         FILE *fileptr; 
@@ -48,8 +35,8 @@ int main(int argc, char *argv[]) {
 
         if (!fileptr) {
             free(fileptr);
-            printf("Command did not match any of the following: \n./run build\n./run install\n./run URL_FILE");
-            printf("\nor the file could not be found in the given path.");
+            fprintf(stdout, "Command did not match any of the following: \n./run build\n./run install\n./run URL_FILE");
+            fprintf(stdout, "\nor the file could not be found in the given path.");
             exit(EXIT_FAILURE);
         }
         
