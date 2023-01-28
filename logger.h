@@ -5,5 +5,6 @@
 
 void log_test();
 void log_command(char* command);
-int loggerUpdateOne(char *command);
+void loggerUpdateOne(char *command);
+void logError(int errorType, char* command);
 int loggerMain(char *command);

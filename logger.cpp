@@ -13,13 +13,23 @@ void log_command(char* command){
 
 }
 
-int loggerUpdateOne(char *command){
+//////////////////////////////////////
+// 
+// Logger Verbosity Level 1
+//
+// Outputs:
+//  * Command success or failure at timestamp
+//  * Command Ran
+//     
+//////////////////////////////////////
+void loggerUpdateOne(char *command){
     FILE *fileptr; 
     fileptr = fopen(logFile, "a");
 
     if (!fileptr){
         fclose(fileptr);
-        return -1;
+        printf("Error logging, log file pointer was NULL");
+        exit(EXIT_FAILURE);
     }
 
     time_t t;
@@ -27,20 +37,51 @@ int loggerUpdateOne(char *command){
     
     fputs("Command Successful:    " , fileptr); 
     fputs(ctime(&t), fileptr);
+    fputs("Command ran was:       ./run ", fileptr);
     fputs(command , fileptr);
+    fputs("\n\n" , fileptr);
 
     fclose(fileptr);
-    return 0;
+}
+
+void logError(int errorType, char* command) {
+
+    FILE *fileptr; 
+    fileptr = fopen(logFile, "a");
+
+     if (!fileptr){
+        fclose(fileptr);
+        printf("Error logging, log file pointer was NULL");
+        exit(EXIT_FAILURE);
+    }
+
+    time_t t;
+    time(&t);
+
+    switch(errorType){
+        case 1: // Invalid run command 
+            fputs("Command Failed:        " , fileptr); 
+            fputs(ctime(&t), fileptr);
+            fputs("Command ran was:       ./run ", fileptr);
+            fputs(command , fileptr);
+            fputs("\n\n" , fileptr);
+            break;
+        default:
+            fputs("Unknwon error in execution " , fileptr);
+            fputs("\n\n" , fileptr);
+    }
+
+    fclose(fileptr);
 }
 
 int loggerMain(char* command){
 
     if (stoi(logLevel) == 1){
-        int updateSuccess = loggerUpdateOne(command);
+        loggerUpdateOne(command);
     } else if (stoi(logLevel) == 2) {
         //int updateSuccess = loggerUpdateTwo();
         printf("s");
     } 
-    
+
     return 0;
 }

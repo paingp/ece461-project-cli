@@ -24,11 +24,15 @@ int main(int argc, char *argv[]) {
         if(build() == EXIT_FAILURE) {
             exit(EXIT_FAILURE);
         }
+
+        loggerMain(argv[1]);
     }
     else if(strcmp(argv[1], "test") == 0) {
         if(test() == EXIT_FAILURE) {
             exit(EXIT_FAILURE);
         }
+
+        loggerMain(argv[1]);
     }
     else {
         // Validating file name input
@@ -38,15 +42,21 @@ int main(int argc, char *argv[]) {
         if (!fileptr) {
             free(fileptr);
             fprintf(stdout, "Command did not match any of the following: \n./run build\n./run install\n./run URL_FILE");
-            fprintf(stdout, "\nor the file could not be found in the given path.");
+            fprintf(stdout, "\nor the file could not be found in the given path.");  
+            logError(1, argv[1]);
             exit(EXIT_FAILURE);
+
         }
-        
+
         // Perform running 
         fclose(fileptr);
 
         // Running file analysis
         url(argv[1]);    
+
+        // Calling logger to log the command that was just run
+        char *runURL = (char *)"RUN_URL";
+        loggerMain(runURL);
     }
      
     exit(EXIT_SUCCESS);

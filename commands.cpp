@@ -2,7 +2,7 @@
 
 // Function to be used for build command
 int build() {
-    return 0;
+    return (EXIT_SUCCESS);
 }
 // Function to be used for install command
 int install() {
