@@ -17,6 +17,8 @@ int main(int argc, char *argv[]) {
         if(install() == EXIT_FAILURE) {
             exit(EXIT_FAILURE);
         }
+
+        loggerMain(argv[1]);
     }
     else if (strcmp(argv[1], "build") == 0){
         if(build() == EXIT_FAILURE) {
