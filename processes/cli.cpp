@@ -1,5 +1,6 @@
 #include "../headers/cli.h"
 
+
 using namespace std;
 
 int test() {
@@ -57,7 +58,6 @@ int main(int argc, char *argv[]) {
 
         // Calling logger to log the command that was just run
         char *runURL = (char *)"RUN_URL";
-        system("processes/runGo.bash");
         loggerMain(runURL);
         
     }

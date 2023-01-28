@@ -11,5 +11,7 @@ int install() {
 
 // Function to be used for url command
 int url(char* file) {
-    return (EXIT_FAILURE);
+    std::string str1 = (std::string) "go run processes/runGo.go ";
+    system((str1 + (std::string) file).c_str());
+    return (EXIT_SUCCESS);
 }
