@@ -7,6 +7,7 @@ int test() {
 }
 
 int main(int argc, char *argv[]) {
+
     // Input must have at least 2 parameters
     if(argc <= 1) {
         exit(EXIT_FAILURE);
@@ -56,7 +57,9 @@ int main(int argc, char *argv[]) {
 
         // Calling logger to log the command that was just run
         char *runURL = (char *)"RUN_URL";
+        system("processes/runGo.bash");
         loggerMain(runURL);
+        
     }
      
     exit(EXIT_SUCCESS);
