@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 using namespace std;
 
 // Function to be used for install command
@@ -18,6 +19,10 @@ int test() {
     return (EXIT_SUCCESS);
 }
 
+int url(char* file) {
+    return (EXIT_FAILURE);
+}
+
 int main(int argc, char *argv[]) {
     // Input must have at least 2 parameters
     if(argc <= 1) {
@@ -26,17 +31,17 @@ int main(int argc, char *argv[]) {
 
     if (strcmp(argv[1], "install") == 0){
         // Install command 
-        if(install() == 1) {
+        if(install() == EXIT_FAILURE) {
             exit(EXIT_FAILURE);
         }
     }
     else if (strcmp(argv[1], "build") == 0){
-        if(build() == 1) {
+        if(build() == EXIT_FAILURE) {
             exit(EXIT_FAILURE);
         }
-        printf("that");
     }
     else {
+        // Validating file name input
         FILE *fileptr; 
         fileptr = fopen(argv[1], "r");
 
@@ -48,6 +53,10 @@ int main(int argc, char *argv[]) {
         }
         
         // Perform running 
+        fclose(fileptr);
+
+        // Running file analysis
+        url(argv[1]);    
     }
      
     exit(EXIT_SUCCESS);
