@@ -1,4 +1,4 @@
-#include "commands.h"
+#include "../headers/commands.h"
 
 // Function to be used for build command
 int build() {

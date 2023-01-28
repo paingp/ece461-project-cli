@@ -15,3 +15,9 @@ Command ran was:       ./run aditya
 Command Failed:        Sat Jan 28 17:26:53 2023
 Command ran was:       ./run aditya
 
+Command Successful:    Sat Jan 28 17:37:37 2023
+Command ran was:       ./run install
+
+Command Successful:    Sat Jan 28 17:37:56 2023
+Command ran was:       ./run test
+

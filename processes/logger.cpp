@@ -1,6 +1,6 @@
-#include "logger.h"
+#include "../headers/logger.h"
 
-char logFile[10] = "log.txt";
+char logFile[18] = "../Logs/log.txt";
 std::string logLevel = "1";
 
 // Log for individual test case
@@ -28,7 +28,7 @@ void loggerUpdateOne(char *command){
 
     if (!fileptr){
         fclose(fileptr);
-        printf("Error logging, log file pointer was NULL");
+        printf(" Error logging, log file pointer was NULL.");
         exit(EXIT_FAILURE);
     }
 

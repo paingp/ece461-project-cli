@@ -1,4 +1,4 @@
-#include "test.h"
+#include "../headers/test.h"
 
 // Test Suite for Build command
 void build_tests(int* tests_total, int* tests_passed) {
