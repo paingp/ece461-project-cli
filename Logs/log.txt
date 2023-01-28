@@ -1,0 +1,23 @@
+Command Successful:    Sat Jan 28 17:05:16 2023
+Command ran was:       ./run install
+Command Successful:    Sat Jan 28 17:10:14 2023
+Command ran was:       ./run RUN_URL
+
+Command Successful:    Sat Jan 28 17:10:31 2023
+Command ran was:       ./run test
+
+Command Successful:    Sat Jan 28 17:12:24 2023
+Command ran was:       ./run foo bar
+
+Command Failed:    Sat Jan 28 17:26:27 2023
+Command ran was:       ./run aditya
+
+Command Failed:        Sat Jan 28 17:26:53 2023
+Command ran was:       ./run aditya
+
+Command Successful:    Sat Jan 28 17:37:37 2023
+Command ran was:       ./run install
+
+Command Successful:    Sat Jan 28 17:37:56 2023
+Command ran was:       ./run test
+
