@@ -1,15 +1,16 @@
 package ratom
 
 type Module struct {
-	string url,
-	int rampUp,
-	int correctness,
-	int busFactor,
-	int respMaint,
-	bool license
+	url         string
+	netScore    float32
+	rampUp      float32
+	correctness uint8
+	busFactor   uint8
+	respMaint   float32
+	license     bool
 }
 
-func (url string) analyze() Module {
-	m := Module{url}
-	return m
-}
+// func (url string) Analyze() Module {
+// 	m := Module{url}
+// 	return m
+// }
