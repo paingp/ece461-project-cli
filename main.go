@@ -28,6 +28,7 @@ func main() {
 
 	var urls []string
 
+	// Read file line by line
 	for scanner.Scan() {
 		url := scanner.Text()
 		module := ratom.Analyze(url)
