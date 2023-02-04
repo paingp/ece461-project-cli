@@ -25,7 +25,7 @@ func main() {
 	)
 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	requestURL := "https://api.github.com/octocat"
+	requestURL := "https://api.github.com/repos/lodash/lodash"
 	resp, error := httpClient.Get(requestURL)
 
 	if error != nil {
@@ -44,7 +44,7 @@ func main() {
 	// Use GitHub GrapQL API via githubv4 library
 
 	client := githubv4.NewClient(httpClient)
-	fmt.Println(os.Getenv("GITHUB_TOKEN"))
+	// fmt.Println(os.Getenv("GITHUB_TOKEN"))
 
 	// Variable to store results of GraphQL query
 	var q struct {
@@ -59,6 +59,6 @@ func main() {
 		panic(error)
 	}
 
-	fmt.Println(q.Viewer.Login)
-	fmt.Println(q.Viewer.CreatedAt)
+	// fmt.Println(q.Viewer.Login)
+	// fmt.Println(q.Viewer.CreatedAt)
 }
