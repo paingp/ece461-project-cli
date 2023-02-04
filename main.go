@@ -2,6 +2,8 @@ package main
 
 import (
 	//"context"
+	"bufio"
+	"fmt"
 	"os"
 
 	"github.com/paingp/ece461-project-cli/ratom"
@@ -15,21 +17,24 @@ func main() {
 	// Read input file
 	filePath := os.Args[1]
 
-	ratom.ReadFile(filePath)
+	file, err := os.Open(filePath)
 
-	// file, err := os.Open(filePath)
+	if err != nil {
+		panic(err)
+	}
 
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-	// scanner := bufio.NewScanner(file)
-	// scanner.Split(bufio.ScanLines)
-	// var urls []string
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
 
-	// for scanner.Scan() {
-	// 	fmt.Println(scanner.Text())
-	// 	urls = append(urls, scanner.Text())
-	// }
+	var urls []string
+
+	for scanner.Scan() {
+		url := scanner.Text()
+		module := ratom.Analyze(url)
+		fmt.Println(module)
+		urls = append(urls, url)
+		ratom.Analyze(url)
+	}
 
 	// Load .env file
 	// error := godotenv.Load(".env")
