@@ -1,16 +1,16 @@
 package main
 
 import (
-	//"context"
 	"bufio"
+	"context"
 	"fmt"
 	"os"
 
 	"github.com/paingp/ece461-project-cli/ratom"
 	//"time"
-	// "github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 	// "github.com/shurcooL/githubv4"
-	// "golang.org/x/oauth2"
+	"golang.org/x/oauth2"
 )
 
 func main() {
@@ -28,27 +28,27 @@ func main() {
 
 	var urls []string
 
+	error := godotenv.Load(".env")
+	if error != nil {
+		panic("Error loading .env file")
+	}
+
+	// Create a token to and HTTP client to access the GitHub API
+	src := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+	)
+	httpClient := oauth2.NewClient(context.Background(), src)
+
 	// Read file line by line
 	for scanner.Scan() {
 		url := scanner.Text()
-		module := ratom.Analyze(url)
+		module := ratom.Analyze(url, httpClient)
 		fmt.Println(module)
 		urls = append(urls, url)
-		ratom.Analyze(url)
 	}
 
 	// Load .env file
-	// error := godotenv.Load(".env")
-	// if error != nil {
-	// 	panic("Error loading .env file")
-	// }
-
-	// // Create a token to and HTTP client to access the GitHub API
-	// src := oauth2.StaticTokenSource(
-	// 	&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	// )
-	// httpClient := oauth2.NewClient(context.Background(), src)
-
+	//
 	// requestURL := "https://api.github.com/repos/lencx/ChatGPT"
 	// resp, error := httpClient.Get(requestURL)
 
