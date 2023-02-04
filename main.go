@@ -1,11 +1,10 @@
 package main
 
 import (
-	"bufio"
 	//"context"
-	"fmt"
-	//"io/ioutil"
 	"os"
+
+	"github.com/paingp/ece461-project-cli/ratom"
 	//"time"
 	// "github.com/joho/godotenv"
 	// "github.com/shurcooL/githubv4"
@@ -16,19 +15,21 @@ func main() {
 	// Read input file
 	filePath := os.Args[1]
 
-	file, err := os.Open(filePath)
+	ratom.ReadFile(filePath)
 
-	if err != nil {
-		fmt.Println(err)
-	}
-	scanner := bufio.NewScanner(file)
-	scanner.Split(bufio.ScanLines)
-	var urls []string
+	// file, err := os.Open(filePath)
 
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-		urls = append(urls, scanner.Text())
-	}
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// scanner := bufio.NewScanner(file)
+	// scanner.Split(bufio.ScanLines)
+	// var urls []string
+
+	// for scanner.Scan() {
+	// 	fmt.Println(scanner.Text())
+	// 	urls = append(urls, scanner.Text())
+	// }
 
 	// Load .env file
 	// error := godotenv.Load(".env")
