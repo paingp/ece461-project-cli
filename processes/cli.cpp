@@ -11,12 +11,12 @@ int main(int argc, char *argv[]) {
 
     vector<std::string> lineNumbers;
     char* logLevel = getenv("LOG_LEVEL");
-
+    
     // Input must have at least 2 parameters
     if(argc <= 1) {
         exit(EXIT_FAILURE);
     }
-
+    
     if (strcmp(argv[1], "install") == 0){
         std::string lineN = std::to_string(__LINE__ - 1);
 
