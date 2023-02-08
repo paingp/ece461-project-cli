@@ -1,6 +1,5 @@
 #include "../headers/cli.h"
 
-
 using namespace std;
 
 int test() {
@@ -101,3 +100,6 @@ int main(int argc, char *argv[]) {
      
     exit(EXIT_SUCCESS);
 }
+
+// MIT is compatible 
+// EU not compatible 

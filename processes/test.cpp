@@ -63,7 +63,7 @@ int master_test() {
     // Testing url command
     int url_total = 0; // Total number of build tests executed
     int url_passed = 0; // Total number of build tests passed
-    url_tests(&url_total, &url_passed, (char*)"fake");
+    url_tests(&url_total, &url_passed, (char*)"sample.txt");
     log_command((char*)"url");
     tests_total += url_total;
     tests_passed += url_passed;
