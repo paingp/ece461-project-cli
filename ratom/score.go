@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"os/exec"
+	//"os/exec"
 	"strings"
 
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
@@ -103,7 +103,7 @@ func Clone(repo string) {
 		log.Fatal(err)
 	}
 
-	// cmd := exec.Command("ls", dir)
+	// cmd := exec.Command("ls | grep -i readme", dir)
 	// out, err := cmd.Output()
 	// if err != nil {
 	// 	log.Fatal(err)
