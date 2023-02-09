@@ -13,5 +13,6 @@ int install() {
 int url(char* file) {
     std::string str1 = (std::string) "go run main.go ";
     system((str1 + (std::string) file).c_str());
+
     return (EXIT_SUCCESS);
 }
