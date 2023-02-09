@@ -52,7 +52,7 @@ void loggerUpdateOne(char *command){
     fputs(ctime(&t), fileptr);
     fputs("Command ran was:       ./run ", fileptr);
     fputs(command , fileptr);
-    fputs("\n\n" , fileptr);
+    // fputs("\n\n" , fileptr);
 
     fclose(fileptr);
 }
@@ -63,7 +63,7 @@ void loggerUpdateTwo(char *command, std::vector<std::string> lineNumbers){
     FILE *fileptr; 
     fileptr = fopen(logFile, "a");
     
-    lineN = "Function: loggerUpdateTwo logging information on line " + lineN;
+    lineN = "Function: loggerUpdateTwo in logger.cpp logging information on line " + lineN;
     lineNumbers.push_back(lineN);
 
     if (!fileptr){
@@ -89,7 +89,7 @@ void loggerUpdateTwo(char *command, std::vector<std::string> lineNumbers){
         fputs("\n" , fileptr);
     }
 
-    fputs("\n\n" , fileptr);
+    //fputs("\n\n" , fileptr);
 
     fclose(fileptr);
 }
@@ -130,7 +130,7 @@ int loggerMain(char* command, std::vector<std::string> lineNumbers){
         loggerUpdateOne(command);
     } else if (atoi(logLevel) == 2) {
         std::string lineN = std::to_string(__LINE__ + 3);
-        lineN = "Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line " + lineN;
+        lineN = "Function: loggerMain  in logger.cpp creating log (verbosity 2) with function loggerUpdateTwo on line " + lineN;
         lineNumbers.push_back(lineN);
         loggerUpdateTwo(command, lineNumbers);
     } 
