@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
         }
 
         if (atoi(logLevel) == 2){
-            lineN = "Function: main install command called on line " + lineN;
+            lineN = "Function: main in cli.cpp 'install' command called on line " + lineN;
             lineNumbers.push_back(lineN);
             lineN = std::to_string(__LINE__ + 3);
             lineN = "Function: loggerMain being called on " + lineN;
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
         }
 
         if (atoi(logLevel) == 2){
-            lineN = "Function: main build command called on line " + lineN;
+            lineN = "Function: main in cli.cpp 'build' command called on line " + lineN;
             lineNumbers.push_back(lineN);
             lineN = std::to_string(__LINE__ + 3);
             lineN = "Function: loggerMain being called on " + lineN;
@@ -57,10 +57,10 @@ int main(int argc, char *argv[]) {
         }
 
         if (atoi(logLevel) == 2){
-            lineN = "Function: main test command called on line " + lineN;
+            lineN = "Function: main in cli.cpp 'test' command called on line " + lineN;
             lineNumbers.push_back(lineN);
             lineN = std::to_string(__LINE__ + 3);
-            lineN = "Function: loggerMain being called on " + lineN;
+            lineN = "Function: loggerMain in cli.cpp being called on " + lineN;
             lineNumbers.push_back(lineN);
         }
         loggerMain(argv[1], lineNumbers);
@@ -82,20 +82,21 @@ int main(int argc, char *argv[]) {
         fclose(fileptr);
 
         // Running file analysis
-        url(argv[1]);   
         std::string lineN = std::to_string(__LINE__ - 1); 
 
         // Calling logger to log the command that was just run
         char *runURL = (char *)"RUN_URL";
         
          if (atoi(logLevel) == 2){
-            lineN = "Function: main test command called on line " + lineN;
+            lineN = "Function: main in cli.cpp 'test' command called on line " + lineN;
             lineNumbers.push_back(lineN);
             lineN = std::to_string(__LINE__ + 3);
-            lineN = "Function: loggerMain being called on " + lineN;
+            lineN = "Function: loggerMain in cli.cpp being called on " + lineN;
             lineNumbers.push_back(lineN);
         }
         loggerMain(runURL, lineNumbers);
+
+        url(argv[1]);   
     }
      
     exit(EXIT_SUCCESS);

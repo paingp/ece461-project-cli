@@ -1,0 +1,316 @@
+Command Successful:    Wed Feb  8 21:25:40 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main in cli.cpp 'test' command called on line 84
+Function: loggerMain in cli.cpp being called on 96
+Function: loggerMain  in logger.cpp creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo in logger.cpp logging information on line 60
+
+
+
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: SliceStable called on main.go at line 71
+Output:
+{https://www.npmjs.com/package/express 1.205 0.4 2.2 1 0.62 true}
+{https://github.com/lodash/lodash 1.1653054 0.15 2.1580155 1 0.71999997 true}
+{https://www.npmjs.com/package/browserify 1.1008273 0.15 1.9737923 1 0.71999997 true}
+{https://github.com/cloudinary/cloudinary_npm 0.8600347 0 1.5143849 1 0.52 true}
+{https://github.com/nullivex/nodist 0.85191905 0 1.4911973 1 0.52 true}
+
+
+Command Successful:    Wed Feb  8 21:28:47 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main in cli.cpp 'test' command called on line 84
+Function: loggerMain in cli.cpp being called on 96
+Function: loggerMain  in logger.cpp creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo in logger.cpp logging information on line 60
+
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 60
+Function: SliceStable called on main.go at line 71
+
+Output:
+{https://www.npmjs.com/package/express 1.205 0.4 2.2 1 0.62 true}
+{https://github.com/lodash/lodash 1.1653054 0.15 2.1580155 1 0.71999997 true}
+{https://www.npmjs.com/package/browserify 1.1008273 0.15 1.9737923 1 0.71999997 true}
+{https://github.com/cloudinary/cloudinary_npm 0.8600347 0 1.5143849 1 0.52 true}
+{https://github.com/nullivex/nodist 0.85191905 0 1.4911973 1 0.52 true}
+
+
+Command Successful:    Wed Feb  8 21:30:31 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main in cli.cpp 'test' command called on line 84
+Function: loggerMain in cli.cpp being called on 96
+Function: loggerMain  in logger.cpp creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo in logger.cpp logging information on line 60
+
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+For URL: https://github.com/cloudinary/cloudinary_npm
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+For URL: https://www.npmjs.com/package/express
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+For URL: https://github.com/nullivex/nodist
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+For URL: https://github.com/lodash/lodash
+Function: ratom.Analyze called on main.go at line 60
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+For URL: https://www.npmjs.com/package/browserify
+Function: ratom.Analyze called on main.go at line 60
+Function: SliceStable called on main.go at line 72
+
+Output:
+{https://www.npmjs.com/package/express 1.205 0.4 2.2 1 0.62 true}
+{https://github.com/lodash/lodash 1.1653054 0.15 2.1580155 1 0.71999997 true}
+{https://www.npmjs.com/package/browserify 1.1008273 0.15 1.9737923 1 0.71999997 true}
+{https://github.com/cloudinary/cloudinary_npm 0.8600347 0 1.5143849 1 0.52 true}
+{https://github.com/nullivex/nodist 0.85191905 0 1.4911973 1 0.52 true}
+
+
+Command Successful:    Wed Feb  8 21:31:24 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main in cli.cpp 'test' command called on line 84
+Function: loggerMain in cli.cpp being called on 96
+Function: loggerMain  in logger.cpp creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo in logger.cpp logging information on line 60
+
+For URL: https://github.com/cloudinary/cloudinary_npm
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+For URL: https://www.npmjs.com/package/express
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+For URL: https://github.com/nullivex/nodist
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+For URL: https://github.com/lodash/lodash
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+For URL: https://www.npmjs.com/package/browserify
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+Function: SliceStable called on main.go at line 72
+
+Output:
+{https://www.npmjs.com/package/express 1.205 0.4 2.2 1 0.62 true}
+{https://github.com/lodash/lodash 1.1653054 0.15 2.1580155 1 0.71999997 true}
+{https://www.npmjs.com/package/browserify 1.1008273 0.15 1.9737923 1 0.71999997 true}
+{https://github.com/cloudinary/cloudinary_npm 0.8600347 0 1.5143849 1 0.52 true}
+{https://github.com/nullivex/nodist 0.85191905 0 1.4911973 1 0.52 true}
+
+
+Command Successful:    Wed Feb  8 21:32:03 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main in cli.cpp 'test' command called on line 84
+Function: loggerMain in cli.cpp being called on 96
+Function: loggerMain  in logger.cpp creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo in logger.cpp logging information on line 60
+
+For URL: https://github.com/cloudinary/cloudinary_npm
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+
+For URL: https://www.npmjs.com/package/express
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+
+For URL: https://github.com/nullivex/nodist
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+
+For URL: https://github.com/lodash/lodash
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+
+For URL: https://www.npmjs.com/package/browserify
+Function: getEndpoint called on score.go at line 77
+Function: metrics.Correctness called on score.go at line 101
+Function: metrics.BusFactor called on score.go at line 105
+Function: metrics.RampUp called on score.go at line 109
+Function: metrics.ResponsiveMaintainer called on score.go at line 113
+Function: metrics.License called on score.go at line 117
+Function: metrics.NetScore called on score.go at line 121
+Function: ratom.Analyze called on main.go at line 61
+
+Function: SliceStable called on main.go at line 72
+
+Output:
+{https://www.npmjs.com/package/express 1.205 0.4 2.2 1 0.62 true}
+{https://github.com/lodash/lodash 1.1653054 0.15 2.1580155 1 0.71999997 true}
+{https://www.npmjs.com/package/browserify 1.1008273 0.15 1.9737923 1 0.71999997 true}
+{https://github.com/cloudinary/cloudinary_npm 0.8600347 0 1.5143849 1 0.52 true}
+{https://github.com/nullivex/nodist 0.85191905 0 1.4911973 1 0.52 true}
+
+

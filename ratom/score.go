@@ -10,13 +10,13 @@ import (
 )
 
 type Module struct {
-	url         string
-	netScore    float32
-	rampUp      float32
-	correctness float32
-	busFactor   float32
-	respMaint   float32
-	license     bool
+	Url         string
+	NetScore    float32
+	RampUp      float32
+	Correctness float32
+	BusFactor   float32
+	RespMaint   float32
+	License     bool
 }
 
 func getEndpoint(url string) string {
@@ -74,6 +74,9 @@ func Analyze(url string, client *http.Client) Module {
 
 	oldURL := url
 	url = getEndpoint((url))
+	lineNumb := metrics.File_line()
+	metrics.Functions = append(metrics.Functions, "Function: getEndpoint called on score.go at line " + lineNumb)
+
 	resp, error := client.Get(url)
 
 	if error != nil {
@@ -95,13 +98,33 @@ func Analyze(url string, client *http.Client) Module {
 
 		//name := jsonRes["id"].(float64)
 		correctnessScore = metrics.Correctness(jsonRes)
+		lineNumb := metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Function: metrics.Correctness called on score.go at line " + lineNumb)
+		
 		busFactor = metrics.BusFactor(jsonRes)
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Function: metrics.BusFactor called on score.go at line " + lineNumb)
+
 		rampUp = metrics.RampUp(jsonRes)
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Function: metrics.RampUp called on score.go at line " + lineNumb)
+
 		responsiveMaintainer = metrics.ResponsiveMaintainer(jsonRes)
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Function: metrics.ResponsiveMaintainer called on score.go at line " + lineNumb)
+
 		license = metrics.License(jsonRes)
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Function: metrics.License called on score.go at line " + lineNumb)
+
 		netScore = metrics.NetScore(correctnessScore, busFactor, rampUp, responsiveMaintainer, license)
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Function: metrics.NetScore called on score.go at line " + lineNumb)
 	}
 
 	m := Module{oldURL, netScore, rampUp, correctnessScore, busFactor, responsiveMaintainer, license}
+	defer resp.Body.Close()
 	return m
 }
+
+//func Sort([] ratom.Module)
