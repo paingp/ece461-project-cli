@@ -34,8 +34,9 @@ func main() {
 	scanner.Split(bufio.ScanLines)
 
 	//var urls []string
-	error := godotenv.Load(".env")
-	if error != nil {
+
+	err = godotenv.Load(".env")
+	if err != nil {
 		panic("Error loading .env file")
 	}
 
@@ -44,6 +45,11 @@ func main() {
 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 	)
 	httpClient := oauth2.NewClient(context.Background(), src)
+
+	err = os.Mkdir("temp", 0770)		// read, write, and execute access for file owner and group owner
+	if err != nil {
+		panic("Error creating temp directory")
+	}
 
 	logLevel, err := strconv.Atoi(os.Getenv("LOG_LEVEL"))
 
@@ -54,6 +60,7 @@ func main() {
 
 	var modules []ratom.Module
 
+	// Read file line by line
 	for scanner.Scan() {
 		url := scanner.Text()
 		metrics.Functions = append(metrics.Functions, "For URL: "+url)
@@ -64,6 +71,8 @@ func main() {
 		modules = append(modules, module)
 		//urls = append(urls, url)
 	}
+
+	os.RemoveAll("temp")
 
 	// Sorting the modules by decreasing net score
 	sort.SliceStable(modules, func(i, j int) bool {

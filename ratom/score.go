@@ -3,11 +3,17 @@ package ratom
 import (
 	"encoding/json"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"os"
+	//"os/exec"
 	"strings"
 
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
+	"github.com/go-git/go-git/v5"
 )
+
+var GITHUB_TOKEN string
 
 type Module struct {
 	Url         string
@@ -48,11 +54,13 @@ func getEndpoint(url string) string {
 
 			bugs := npmRes["bugs"].(map[string]interface{})
 			endpoint = bugs["url"].(string)
+			Clone(strings.Replace(endpoint, "/issues", ".git", 1))
 			endpoint = endpoint[:8] + "api." + strings.Replace(endpoint[8:], "/", "/repos/", 1)
 			endpoint = endpoint[:len(endpoint)-7]
 		}
 
 	} else {
+		Clone(url + ".git")
 		index := strings.Index(url, "github")
 		if index != -1 {
 			//fmt.Print(url[index:])
@@ -61,6 +69,47 @@ func getEndpoint(url string) string {
 		//endpoint = subStrings[0] + "api." + subStrings[1]
 	}
 	return endpoint
+}
+
+func GetToken() string {
+	return os.Getenv("GITHUB_TOKEN")
+}
+
+func Clone(repo string) {
+
+	// Temp directory to clone the repository
+	if GITHUB_TOKEN == "" {
+		GITHUB_TOKEN = GetToken()
+	}
+
+	dir, err := os.MkdirTemp("temp", "repo")
+	//fmt.Println(url)
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer os.RemoveAll(dir)
+	log.Println(dir)
+	log.Println(repo)
+
+	_, err = git.PlainClone(dir, false, &git.CloneOptions{
+		URL: repo,
+		SingleBranch: true,
+		Depth: 1,
+	})
+		
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// cmd := exec.Command("ls | grep -i readme", dir)
+	// out, err := cmd.Output()
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// log.Println(string(out))
 }
 
 func Analyze(url string, client *http.Client) Module {
