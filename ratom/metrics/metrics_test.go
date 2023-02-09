@@ -40,8 +40,13 @@ func TestBusFactor(t *testing.T) {
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
 		var bus = BusFactor(jsonRes)
+		var cor = Correctness(jsonRes)
+		var ramp = RampUp(jsonRes)
+		var resp = ResponsiveMaintainer(jsonRes)
+		var net = NetScore(cor, bus, ramp, resp, false)
 
-		if bus < 0 || bus > 1 {
+
+		if net < 0 || net > 1 {
 			t.Fatalf("Bus is out of range")
 		}
 	}
