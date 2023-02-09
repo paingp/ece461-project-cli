@@ -2,10 +2,15 @@
 
 // Function to be used for build command
 int build() {
+    //system("cd processes");
+    system("export $(cat .env | xargs)");
+    system("g++ processes/*.cpp -o run");
+    //system("bash processes/buildRun.sh");
     return (EXIT_SUCCESS);
 }
 // Function to be used for install command
 int install() {
+    system("go get .");
     return (EXIT_SUCCESS);
 }
 

@@ -14,6 +14,7 @@ import (
 
 var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
 
+// Tests 1 - 7
 func TestBusFactor(t *testing.T) {
 	src := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},

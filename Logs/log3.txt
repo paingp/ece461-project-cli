@@ -18,3 +18,12 @@ Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on
 Function: loggerUpdateTwo logging information on line 60
 
 
+Command Successful:    Wed Feb  8 22:33:52 2023
+Command ran was:       ./run buildCommand Successful:    Wed Feb  8 22:33:56 2023
+Command ran was:       ./run buildCommand Successful:    Wed Feb  8 22:35:18 2023
+Command ran was:       ./run buildCommand Successful:    Wed Feb  8 22:36:11 2023
+Command ran was:       ./run buildCommand Successful:    Wed Feb  8 22:36:28 2023
+Command ran was:       ./run buildCommand Successful:    Wed Feb  8 22:37:03 2023
+Command ran was:       ./run buildCommand Successful:    Wed Feb  8 22:39:01 2023
+Command ran was:       ./run installCommand Successful:    Wed Feb  8 22:39:09 2023
+Command ran was:       ./run build
