@@ -5,8 +5,10 @@ import (
 	"context"
 	"fmt"
 	"os"
+	//"sort"
 
 	"github.com/paingp/ece461-project-cli/ratom"
+
 	//"time"
 	"github.com/joho/godotenv"
 	// "github.com/shurcooL/githubv4"
@@ -26,7 +28,7 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 
-	var urls []string
+	//var urls []string
 
 	error := godotenv.Load(".env")
 	if error != nil {
@@ -39,13 +41,20 @@ func main() {
 	)
 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	// Read file line by line
+	var modules []ratom.Module
+
+  // Read file line by line
 	for scanner.Scan() {
 		url := scanner.Text()
 		module := ratom.Analyze(url, httpClient)
 		fmt.Println(module)
-		urls = append(urls, url)
+		modules = append(modules, module)
+		//urls = append(urls, url)
 	}
+
+	// sort.SliceStable(modules, func(i, j int) bool {
+	// 	return &modules[i].netScore < modules[j].netScore
+	// })
 
 	// Load .env file
 	//

@@ -1,0 +1,520 @@
+Command Successful:    Sat Feb  4 18:08:41 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 88
+Function: loggerMain being called on 100
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:09:15 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 88
+Function: loggerMain being called on 100
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:10:37 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:13:58 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:14:16 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:14:38 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:15:47 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:16:26 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:17:16 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:18:27 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:20:17 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:20:45 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:21:00 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:21:30 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:21:49 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:22:01 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:23:27 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:24:24 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:36:38 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:46:52 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 18:55:42 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:03:42 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:18:36 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:18:52 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:19:38 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:19:57 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:21:16 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:21:39 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:21:46 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:22:29 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:22:45 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:22:58 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:23:33 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:24:22 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:24:35 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:26:18 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:36:14 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:36:23 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:36:41 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:41:35 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:42:20 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:44:40 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:46:18 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:46:46 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:47:34 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:49:26 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:49:41 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:50:15 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:54:07 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:55:19 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 19:55:30 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
+Command Successful:    Sat Feb  4 20:01:01 2023
+Command ran was:       ./run RUN_URL
+
+________________Debugging Information________________
+Function: main test command called on line 86
+Function: loggerMain being called on 98
+Function: loggerMain creating log (verbosity 2) with function loggerUpdateTwo on line 135
+Function: loggerUpdateTwo logging information on line 60
+
+
