@@ -43,6 +43,7 @@ func main() {
 
 	var modules []ratom.Module
 
+  // Read file line by line
 	for scanner.Scan() {
 		url := scanner.Text()
 		module := ratom.Analyze(url, httpClient)
