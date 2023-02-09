@@ -30,8 +30,8 @@ func main() {
 
 	//var urls []string
 
-	error := godotenv.Load(".env")
-	if error != nil {
+	err = godotenv.Load(".env")
+	if err != nil {
 		panic("Error loading .env file")
 	}
 
@@ -40,6 +40,11 @@ func main() {
 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 	)
 	httpClient := oauth2.NewClient(context.Background(), src)
+
+	err = os.Mkdir("temp", 0770)		// read, write, and execute access for file owner and group owner
+	if err != nil {
+		panic("Error creating temp directory")
+	}
 
 	var modules []ratom.Module
 
@@ -51,6 +56,8 @@ func main() {
 		modules = append(modules, module)
 		//urls = append(urls, url)
 	}
+
+	os.RemoveAll("temp")
 
 	// sort.SliceStable(modules, func(i, j int) bool {
 	// 	return &modules[i].netScore < modules[j].netScore
