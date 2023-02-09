@@ -1,19 +1,20 @@
 package ratom
 
 import (
-	// "bufio"
-	// "bytes"
-	//"fmt"
+	"context"
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
-	//"regexp"
+	//"os/exec"
 	"strings"
 
-	"github.com/paingp/ece461-project-cli/ratom/metrics"
+	"github.com/shurcooL/githubv4"
+
 	"github.com/go-git/go-git/v5"
+	"github.com/paingp/ece461-project-cli/ratom/metrics"
 )
 
 var GITHUB_TOKEN string
@@ -90,15 +91,15 @@ func Clone(repo string) string {
 	}
 
 	defer os.RemoveAll(dir)
-	log.Println(dir)
-	log.Println(repo)
+	// log.Println(dir)
+	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL: repo + ".git",
 		SingleBranch: true,
-		Depth: 1,
+		Depth:        1,
 	})
-		
+
 	if err != nil {
 		log.Fatal(err)
 		return "err"
@@ -115,6 +116,18 @@ func Analyze(url string, client *http.Client) Module {
 	var license bool
 	var netScore float32
 
+	var Data struct {
+		Viewer struct {
+			Login string
+		}
+		Repository struct {
+			CommitComments struct {
+				TotalCount int
+			}
+		} `graphql:"repository(owner: \"expressjs\", name: \"express\")"`
+	}
+
+
 	//oldURL := url
 
 	gitUrl := getGithubUrl(url)
@@ -123,13 +136,21 @@ func Analyze(url string, client *http.Client) Module {
 
 	endpoint := getEndpoint(gitUrl)
 	lineNumb := metrics.File_line()
-	metrics.Functions = append(metrics.Functions, "Function: getEndpoint called on score.go at line " + lineNumb)
+	metrics.Functions = append(metrics.Functions, "Function: getEndpoint called on score.go at line "+lineNumb)
 
 	resp, error := client.Get(endpoint)
 
 	if error != nil {
 		panic(error)
 	}
+
+	graphQLClient := githubv4.NewClient(client)
+	error = graphQLClient.Query(context.Background(), &Data, nil)
+	if error != nil {
+		panic(error)
+	}
+
+	fmt.Println(Data.Repository.CommitComments.TotalCount)
 
 	if resp.StatusCode == http.StatusOK {
 		bodyBytes, err := io.ReadAll(resp.Body)
@@ -147,28 +168,28 @@ func Analyze(url string, client *http.Client) Module {
 		//name := jsonRes["id"].(float64)
 		correctnessScore = metrics.Correctness(jsonRes)
 		lineNumb := metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Function: metrics.Correctness called on score.go at line " + lineNumb)
-		
+		metrics.Functions = append(metrics.Functions, "Function: metrics.Correctness called on score.go at line "+lineNumb)
+
 		busFactor = metrics.BusFactor(jsonRes)
 		lineNumb = metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Function: metrics.BusFactor called on score.go at line " + lineNumb)
+		metrics.Functions = append(metrics.Functions, "Function: metrics.BusFactor called on score.go at line "+lineNumb)
 
 		rampUp = metrics.RampUp(jsonRes)
 		lineNumb = metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Function: metrics.RampUp called on score.go at line " + lineNumb)
+		metrics.Functions = append(metrics.Functions, "Function: metrics.RampUp called on score.go at line "+lineNumb)
 
 		responsiveMaintainer = metrics.ResponsiveMaintainer(jsonRes)
 		lineNumb = metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Function: metrics.ResponsiveMaintainer called on score.go at line " + lineNumb)
+		metrics.Functions = append(metrics.Functions, "Function: metrics.ResponsiveMaintainer called on score.go at line "+lineNumb)
 
 
 		license = metrics.License(dir)
 		lineNumb = metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Function: metrics.License called on score.go at line " + lineNumb)
+		metrics.Functions = append(metrics.Functions, "Function: metrics.License called on score.go at line "+lineNumb)
 
 		netScore = metrics.NetScore(correctnessScore, busFactor, rampUp, responsiveMaintainer, license)
 		lineNumb = metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Function: metrics.NetScore called on score.go at line " + lineNumb)
+		metrics.Functions = append(metrics.Functions, "Function: metrics.NetScore called on score.go at line "+lineNumb)
 	}
 
 	defer resp.Body.Close()
