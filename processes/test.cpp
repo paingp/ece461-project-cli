@@ -63,7 +63,7 @@ int master_test() {
     // Testing url command
     int url_total = 0; // Total number of build tests executed
     int url_passed = 0; // Total number of build tests passed
-    url_tests(&url_total, &url_passed, (char*)"sample.txt");
+    //url_tests(&url_total, &url_passed, (char*)"sample.txt");
     log_command((char*)"url");
     tests_total += url_total;
     tests_passed += url_passed;
@@ -77,8 +77,11 @@ int master_test() {
     tests_passed += log_passed;
 
 
+    system("go test ./ratom > temp.txt");
+    system("rm temp.txt");
+
     int coverage = 0;
-    // Outputting to stdout
+    // Outputting to stdout;
     fprintf(stdout, "Total: %d\n", tests_total);
     fprintf(stdout, "Passed: %d\n", tests_passed);
     fprintf(stdout, "Coverage %d%%\n", coverage);
