@@ -325,3 +325,19 @@ Output:
 {https://github.com/nullivex/nodist 0.8517877 0 1.490822 1 0.52 true}
 
 
+Command Successful:    Fri Feb 10 13:59:04 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:00:33 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:01:07 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:01:17 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:01:42 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:02:30 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:03:18 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:04:34 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:04:48 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:05:01 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:05:19 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:05:32 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:07:01 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:07:52 2023
+Command ran was:       ./run testCommand Successful:    Fri Feb 10 14:09:36 2023
+Command ran was:       ./run test

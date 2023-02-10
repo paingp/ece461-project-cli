@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
-	"github.com/go-git/go-git/v5"
+	//"github.com/go-git/go-git/v5"
 )
 
 var GITHUB_TOKEN string
@@ -89,7 +89,9 @@ func Clone(repo string) string {
 		return ""
 	}
 
-	//defer os.RemoveAll(dir)
+	defer os.RemoveAll(dir)
+	log.Println(dir)
+	log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL: repo + ".git",
