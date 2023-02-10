@@ -116,18 +116,6 @@ func Analyze(url string, client *http.Client) Module {
 	var license bool
 	var netScore float32
 
-	var Data struct {
-		Viewer struct {
-			Login string
-		}
-		Repository struct {
-			CommitComments struct {
-				TotalCount int
-			}
-		} `graphql:"repository(owner: \"expressjs\", name: \"express\")"`
-	}
-
-
 	//oldURL := url
 
 	gitUrl := getGithubUrl(url)
@@ -143,14 +131,8 @@ func Analyze(url string, client *http.Client) Module {
 	if error != nil {
 		panic(error)
 	}
-
-	graphQLClient := githubv4.NewClient(client)
-	error = graphQLClient.Query(context.Background(), &Data, nil)
-	if error != nil {
-		panic(error)
-	}
-
-	fmt.Println(Data.Repository.CommitComments.TotalCount)
+	
+	//fmt.Println(Data.Repository.CommitComments.TotalCount)
 
 	if resp.StatusCode == http.StatusOK {
 		bodyBytes, err := io.ReadAll(resp.Body)
@@ -165,6 +147,31 @@ func Analyze(url string, client *http.Client) Module {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
+		// GRAPH QL 
+		owner_map := jsonRes["owner"].(map[string]interface{})
+
+		var Data struct {
+			Viewer struct {
+				Login string
+			}
+			Repository struct {
+				CommitComments struct {
+					TotalCount int
+				}
+			} `graphql:"repository(owner: $owner, name: $name)"`
+		}
+	
+		variables := map[string]interface{}{
+			"owner": githubv4.String(owner_map["login"].(string)),
+			"name":  githubv4.String(jsonRes["name"].(string)),
+		}
+	
+		graphQLClient := githubv4.NewClient(client)
+		error = graphQLClient.Query(context.Background(), &Data, variables)
+		if error != nil {
+			panic(error)
+		}
+		
 		//name := jsonRes["id"].(float64)
 		correctnessScore = metrics.Correctness(jsonRes)
 		lineNumb := metrics.File_line()
@@ -174,7 +181,7 @@ func Analyze(url string, client *http.Client) Module {
 		lineNumb = metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.BusFactor called on score.go at line "+lineNumb)
 
-		rampUp = metrics.RampUp(jsonRes)
+		rampUp = metrics.RampUp(jsonRes, Data.Repository.CommitComments.TotalCount)
 		lineNumb = metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.RampUp called on score.go at line "+lineNumb)
 
