@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/go-git/go-git/v5 v5.5.2
 	github.com/joho/godotenv v1.5.0
+	github.com/shurcooL/githubv4 v0.0.0-20221229060216-a8d4a561cc93
 	golang.org/x/oauth2 v0.4.0
 )
 
@@ -24,7 +25,6 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/pjbgf/sha1cd v0.2.3 // indirect
 	github.com/sergi/go-diff v1.3.1 // indirect
-	github.com/shurcooL/githubv4 v0.0.0-20221229060216-a8d4a561cc93 // indirect
 	github.com/shurcooL/graphql v0.0.0-20220606043923-3cf50f8a0a29 // indirect
 	github.com/skeema/knownhosts v1.1.0 // indirect
 	github.com/src-d/gcfg v1.4.0 // indirect
