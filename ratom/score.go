@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
-	//"github.com/go-git/go-git/v5"
+	"github.com/go-git/go-git/v5"
 )
 
 var GITHUB_TOKEN string
