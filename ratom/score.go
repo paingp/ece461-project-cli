@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
+
 	//"fmt"
 	"io"
 	"log"
@@ -92,6 +93,7 @@ func Clone(repo string) string {
 	lastIdx := strings.LastIndex(repo, "/")
 	//fmt.Println(repo[lastIdx + 1:])
 	dir := "temp/" + repo[lastIdx+1:]
+	dir := "temp/" + repo[lastIdx+1:]
 
 	err := os.MkdirAll(dir, 0777)
 
@@ -104,9 +106,9 @@ func Clone(repo string) string {
 	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
-		URL:          repo + ".git",
+		URL: repo + ".git",
 		SingleBranch: true,
-		Depth:        1,
+		Depth: 1,
 	})
 
 	if err != nil {
@@ -148,6 +150,7 @@ func Analyze(url string, client *http.Client) Module {
 		return Module{url, -1, -1, -1, -1, -1, false}
 	}
 
+
 	//fmt.Println(Data.Repository.CommitComments.TotalCount)
 
 	if resp.StatusCode == http.StatusOK {
@@ -164,6 +167,7 @@ func Analyze(url string, client *http.Client) Module {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
+		// GRAPH QL
 		// GRAPH QL
 		owner_map := jsonRes["owner"].(map[string]interface{})
 
@@ -189,6 +193,7 @@ func Analyze(url string, client *http.Client) Module {
 			metrics.Functions = append(metrics.Functions, "GraphQL could not create a client in goLang on line "+metrics.File_line())
 			Data.Repository.CommitComments.TotalCount = 0
 		}
+
 
 		//name := jsonRes["id"].(float64)
 		correctnessScore = metrics.Correctness(jsonRes)
@@ -222,7 +227,8 @@ func Analyze(url string, client *http.Client) Module {
 		responsiveMaintainer = -1.0
 		license = false
 
-		metrics.Functions = append(metrics.Functions, "Invalid endpoint / URL given could not retrieve API data!")
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Invalid endpoint / URL given could not retrieve API data! "+lineNumb)
 	}
 
 	defer resp.Body.Close()
