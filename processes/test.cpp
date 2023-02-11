@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 
-
 using namespace std;
 
 // Test Suite for Build command
@@ -87,8 +86,13 @@ int master_test() {
 
     // Getting go tests
     system("go test -cover -v ./ratom > test_output.txt");
+    system("go test -cover -v ./ratom > test_output.txt");
 
 
+    std::ifstream testText;
+    std::string line;
+    std::string coverage_reg;
+    std::cmatch m;
     std::ifstream testText;
     std::string line;
     std::string coverage_reg;
@@ -99,8 +103,9 @@ int master_test() {
     {
         while (getline(testText, line))
         {
-            std::regex_search(line.c_str(), m, std::regex("=== RUN"));
+            std::regex_search(line.c_str(), m, std::regex("--- PASS:"));
             if(!m.empty()) {
+                tests_passed++;
                 tests_total++;
             }
             std::regex_search(line.c_str(), m, std::regex("--- PASS:"));
@@ -128,7 +133,28 @@ int master_test() {
     for(int i = 0; i < 4; i ++) {
         //printf("%c\n", m[0].str().c_str()[i + 10]);
         coverage[i] = m[0].str().c_str()[i + 10];
+    testText.close();
+
+    // line = "";
+
+    // for(int i = 0; i < 5; i++) {
+    //     line += m[0].str();
+    // }
+
+    char coverage[4];
+
+    for(int i = 0; i < 4; i ++) {
+        //printf("%c\n", m[0].str().c_str()[i + 10]);
+        coverage[i] = m[0].str().c_str()[i + 10];
     }
+
+
+    // fseek(fptr, 1053, SEEK_SET);
+    // char coverage[6];
+    // for(int i = 0; i < 4; i++) {
+    //     coverage[i] = fgetc(fptr);
+    // }
+    // coverage[4] = '%';
 
 
     // fseek(fptr, 1053, SEEK_SET);
@@ -144,6 +170,8 @@ int master_test() {
     // Outputting to stdout;
     fprintf(stdout, "Total: %d\n", tests_total);
     fprintf(stdout, "Passed: %d\n", tests_passed);
+    fprintf(stdout, "Coverage: %s%%\n", coverage);
+    fprintf(stdout, "%d/%d test cases passed. %s%% line coverage achieved.\n", tests_passed, tests_total, coverage);
     fprintf(stdout, "Coverage: %s%%\n", coverage);
     fprintf(stdout, "%d/%d test cases passed. %s%% line coverage achieved.\n", tests_passed, tests_total, coverage);
 
