@@ -34,11 +34,11 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 
-	// Load environment variables from .env file
-	err = godotenv.Load(".env")
-	if err != nil {
-		panic("Error loading .env file")
-	}
+	// // Load environment variables from .env file
+	// err = godotenv.Load(".env")
+	// if err != nil {
+	// 	panic("Error loading .env file")
+	// }
 
 	// Create a token to and HTTP client to access the GitHub API
 	src := oauth2.StaticTokenSource(
