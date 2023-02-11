@@ -2,10 +2,11 @@ package metrics
 
 import (
 	//"fmt"
+
+	"math"
 	"strconv"
 	"strings"
 	"time"
-	"math"
 )
 
 func ResponsiveMaintainer(jsonRes map[string]interface{}) float32 {
@@ -38,27 +39,27 @@ func ResponsiveMaintainer(jsonRes map[string]interface{}) float32 {
 	}
 	monthObj := time.Month(month)
 
-	// Arbitrarily taken from the 15 of the month 
+	// Arbitrarily taken from the 15 of the month
 
 	t1 := time.Date(year, monthObj, 15, 0, 0, 0, 0, time.UTC)
 	t2 := time.Now()
 	diff := t2.Sub(t1)
 
 	var updatedLast float32
-	updatedLast = float32(diff.Seconds())
+	//updatedLast = float32(diff.Seconds())
 
-	updatedLast = 0.25 * float32(math.Min(0, 1 - math.Log10(float64(updatedLast)) / 8))
-	// if 0 < diff.Seconds() && diff.Seconds() <= 604800 { // 7 days timeline
-	// 	updatedLast = .25
-	// } else if diff.Seconds() <= 15720000 { // 1/2 a year timeline
-	// 	updatedLast = 0.12
-	// } else if diff.Seconds() <= 15720000*2 { // 1 year timeline
-	// 	updatedLast = 0.06
-	// } else if diff.Seconds() <= 15720000*2*2 { //2 years timeline
-	// 	updatedLast = 0.03
-	// } else {
-	// 	updatedLast = 0
-	// }
+	//updatedLast = 0.25 * float32(math.Min(0, 1-math.Log10(float64(updatedLast))/8))
+	if 0 < diff.Seconds() && diff.Seconds() <= 604800 { // 7 days timeline
+		updatedLast = .25
+	} else if diff.Seconds() <= 15720000 { // 1/2 a year timeline
+		updatedLast = 0.12
+	} else if diff.Seconds() <= 15720000*2 { // 1 year timeline
+		updatedLast = 0.06
+	} else if diff.Seconds() <= 15720000*2*2 { //2 years timeline
+		updatedLast = 0.03
+	} else {
+		updatedLast = 0
+	}
 
 	////////////////////////////////////////////////////////////////////////
 
@@ -69,8 +70,8 @@ func ResponsiveMaintainer(jsonRes map[string]interface{}) float32 {
 
 	issuesScore := 0.0
 
-	if(hasIssues) {
-		issuesScore = 0.35 * math.Min(1, openIssues / 350)
+	if hasIssues {
+		issuesScore = 0.35 * math.Min(1, openIssues/350)
 	}
 	// if (hasIssues && (0 < openIssues && openIssues <= 50)){
 	// 	issuesScore = .15
@@ -79,17 +80,18 @@ func ResponsiveMaintainer(jsonRes map[string]interface{}) float32 {
 	// } else if (hasIssues && openIssues <= 200){
 	// 	issuesScore = 0.25
 	// } else if (hasIssues && openIssues <= 300){
-	// 	issuesScore = 0.3 
-	// } else if (hasIssues){ 
+	// 	issuesScore = 0.3
+	// } else if (hasIssues){
 	// 	issuesScore = 0.35
 	//}
 
 	archivedStatus := jsonRes["archived"].(bool)
 	archivedScore := 0.0
 
-	if (!archivedStatus){
+	if !archivedStatus {
 		archivedScore = 0.2
 	}
-	
-	return private + updatedLast + float32(issuesScore) + float32(archivedScore)
+
+	totalValue := float32(private + updatedLast + float32(issuesScore) + float32(archivedScore))
+	return totalValue
 }

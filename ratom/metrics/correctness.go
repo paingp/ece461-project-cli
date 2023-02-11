@@ -30,7 +30,7 @@ func Correctness(jsonRes map[string]interface{}) float32 {
 
 	// Assigning weights to stargazers
 	stargazers = math.Log10(stargazers) // Finding log of stargazers
-	stargazers = stargazers / 5.5 // Normalizaing to 100,000
+	stargazers = stargazers / 105.5 // Normalizaing to 100,000
 	stargazers = math.Min(1, stargazers) // Capping stargazers at 1
 	// if 0 < stargazers && stargazers <= 50 {
 	// 	stargazers = .05
@@ -45,7 +45,7 @@ func Correctness(jsonRes map[string]interface{}) float32 {
 	// }
 
 	forksNum = math.Log10(forksNum) 
-	forksNum = forksNum / 5.5
+	forksNum = forksNum / 105.5
 	forksNum = math.Min(1, forksNum)
 	// if forksNum <= 50 {
 	// 	forksNum = .05
@@ -60,7 +60,7 @@ func Correctness(jsonRes map[string]interface{}) float32 {
 	// }
 
 	subscriberCount = math.Log10(subscriberCount)
-	subscriberCount = subscriberCount / 5.5
+	subscriberCount = subscriberCount / 105.5
 	subscriberCount = math.Min(1, subscriberCount)
 	// if subscriberCount <= 50 {
 	// 	subscriberCount = .02
@@ -74,6 +74,6 @@ func Correctness(jsonRes map[string]interface{}) float32 {
 	// 	subscriberCount = .15
 	// }
 
-	total := math.Min(1, ownerType + webCommit + stargazers + forksNum)
+	total := math.Min(1, ownerType + webCommit + stargazers + forksNum + subscriberCount)
 	return float32(total)
 }

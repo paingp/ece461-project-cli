@@ -5,16 +5,16 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
+	//"github.com/joho/godotenv"
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
 )
 
 func LoggerVerbOne(output []Module) {
 
-	error := godotenv.Load(".env")
-	if error != nil {
-		panic("Error loading .env file")
-	}
+	// error := godotenv.Load(".env")
+	// if error != nil {
+	// 	panic("Error loading .env file")
+	// }
 
 	logPath := os.Getenv("LOG_FILE")
 
@@ -43,10 +43,10 @@ func LoggerVerbOne(output []Module) {
 }
 
 func LoggerVerbTwo(output []Module) {
-	error := godotenv.Load(".env")
-	if error != nil {
-		panic("Error loading .env file")
-	}
+	// error := godotenv.Load(".env")
+	// if error != nil {
+	// 	panic("Error loading .env file")
+	// }
 
 	logPath := os.Getenv("LOG_FILE")
 
