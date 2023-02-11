@@ -48,7 +48,27 @@ func TestAnalyzeNPM(t *testing.T) {
 	LoggerVerbTwo(modules)
 
 	if(module.License == false) {
-		fmt.Printf("No License")
+		fmt.Printf("Cannot find license")
+	}
+}
+
+var file3 = "https://www.npmjs.com/package/linalg.js"
+
+func TestAnalyzeNoGithub(t *testing.T) {
+	src := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+	)
+	httpClient := oauth2.NewClient(context.Background(), src)
+
+	module := Analyze(file3, httpClient)
+	os.RemoveAll("temp")
+	var modules []Module
+	modules = append(modules, module)
+	LoggerVerbOne(modules)
+	LoggerVerbTwo(modules)
+
+	if(module.NetScore != -1) {
+		t.Fatalf("Incorrectly parsed")
 	}
 }
 
