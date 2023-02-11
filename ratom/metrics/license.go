@@ -10,6 +10,7 @@ import (
 )
 
 var readme string
+var Read bool
 
 // https://stackoverflow.com/questions/71153302/how-to-set-depth-for-recursive-iteration-of-directories-in-filepath-walk-func
 func walk(path string, d fs.DirEntry, err error) error {
@@ -42,15 +43,28 @@ func License(directory string) bool {
 
 	err := filepath.WalkDir(directory, walk)
 	if err != nil {
+<<<<<<< HEAD
 		Functions = append(Functions, "Error while trying to find ReadMe in " + directory)
+=======
+		Read = false
+>>>>>>> 92d3c08 (Implemented license compatibility check)
 		return false
 	}
 
 	if readme == "" {
+<<<<<<< HEAD
 		Functions = append(Functions, "ReadMe could be found in " + directory)
 		return false
 	}
 
+=======
+		Read = false
+		return false
+	}
+
+	Read = true
+
+>>>>>>> 92d3c08 (Implemented license compatibility check)
 	file, err := os.Open(readme)
 
 	if err != nil {
@@ -75,7 +89,11 @@ func License(directory string) bool {
 	licenses := [9]string{"MIT", "LGPLv2.1", "Expat", "X11", "MPL-2.0", "Mozilla Public", "Artistic License 2", "GPLv2", "GPLv3"}
 
 	for i := 0; i < len(text); i++ {
+<<<<<<< HEAD
 		//fmt.Println(text[i])
+=======
+		fmt.Println(text[i])
+>>>>>>> 92d3c08 (Implemented license compatibility check)
 		for j := 0; j < len(licenses); j++ {
 			re = regexp.MustCompile("(?i)" + licenses[j])
 			if (re.MatchString(text[i])) {
