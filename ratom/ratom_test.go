@@ -1,9 +1,5 @@
 package ratom
 
-<<<<<<< HEAD
-<<<<<<<< HEAD:ratom/ratom_test.go
-=======
->>>>>>> 544c4da (Updating scoring and testing)
 import (
 	"testing"
 	"fmt"
@@ -25,10 +21,8 @@ func TestAnalyze(t *testing.T) {
 	httpClient := oauth2.NewClient(context.Background(), src)
 
 	module := Analyze(file, httpClient)
-<<<<<<< HEAD
 	os.RemoveAll("temp")
-=======
->>>>>>> 544c4da (Updating scoring and testing)
+
 	var modules []Module
 	modules = append(modules, module)
 	LoggerVerbOne(modules)
@@ -117,15 +111,6 @@ func TestBusFactor(t *testing.T) {
 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 	)
 	httpClient := oauth2.NewClient(context.Background(), src)
-<<<<<<< HEAD
-========
-// import (	
-// 	"context"
-// 	"os"
-// 	"testing"
-// 	"net/http"
-// 	"io/ioutil"
-// 	"encoding/json"
 
 
 // 	"golang.org/x/oauth2"
@@ -142,7 +127,7 @@ func TestBusFactor(t *testing.T) {
 // 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 // 	)
 // 	httpClient := oauth2.NewClient(context.Background(), src)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 	resp, error := httpClient.Get(endpoint)
 
@@ -167,7 +152,7 @@ func TestBusFactor(t *testing.T) {
 		var bus = metrics.BusFactor(jsonRes)
 ========
 // 		var bus = BusFactor(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if bus < 0 || bus > 1 {
 // 			t.Fatalf("Bus is out of range")
@@ -206,7 +191,7 @@ func TestBusFactor(t *testing.T) {
 		var cor = metrics.Correctness(jsonRes)
 ========
 // 		var cor = Correctness(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if cor < 0 || cor > 1 {
@@ -248,7 +233,7 @@ func TestBusFactor(t *testing.T) {
 		var ramp = metrics.RampUp(jsonRes, 3)
 ========
 // 		var ramp = RampUp(jsonRes, 3)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if ramp < 0 || ramp > 1 {
@@ -288,7 +273,7 @@ func TestBusFactor(t *testing.T) {
 		var resp = metrics.ResponsiveMaintainer(jsonRes)
 ========
 // 		var resp = ResponsiveMaintainer(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if resp < 0 || resp > 1 {
 // 			t.Fatalf("Responsive Maintainer is out of range")
@@ -495,7 +480,6 @@ func TestNetScore(t *testing.T) {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
->>>>>>> 544c4da (Updating scoring and testing)
 		var bus = metrics.BusFactor(jsonRes)
 		var cor = metrics.Correctness(jsonRes)
 		var ramp = metrics.RampUp(jsonRes, 20)
@@ -508,21 +492,7 @@ func TestNetScore(t *testing.T) {
 // 		var ramp = RampUp(jsonRes, 20)
 // 		var resp = ResponsiveMaintainer(jsonRes)
 // 		var net = NetScore(cor, bus, ramp, resp, false)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
-
-
-// 		if net < 0 || net > 1 {
-// 			t.Fatalf("Net Score is out of range")
-// 		}
-// 	}
-
-	
-
-// 	defer resp.Body.Close()
-// }
-
-<<<<<<<< HEAD:ratom/ratom_test.go
-=======
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 		if net < 0 || net > 1 {
@@ -535,7 +505,7 @@ func TestNetScore(t *testing.T) {
 	defer resp.Body.Close()
 }
 
->>>>>>> 544c4da (Updating scoring and testing)
+>>>>>>> 7d64c38 (Updating scoring and testing)
 // Tests 6 - 12
 func TestBusFactor2(t *testing.T) {
 	src := oauth2.StaticTokenSource(
@@ -550,7 +520,7 @@ func TestBusFactor2(t *testing.T) {
 // 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 // 	)
 // 	httpClient := oauth2.NewClient(context.Background(), src)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 	resp, error := httpClient.Get(endpoint2)
 
@@ -575,7 +545,7 @@ func TestBusFactor2(t *testing.T) {
 		var bus = metrics.BusFactor(jsonRes)
 ========
 // 		var bus = BusFactor(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if bus < 0 || bus > 1 {
 // 			t.Fatalf("Bus is out of range")
@@ -614,7 +584,7 @@ func TestBusFactor2(t *testing.T) {
 		var cor = metrics.Correctness(jsonRes)
 ========
 // 		var cor = Correctness(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if cor < 0 || cor > 1 {
@@ -656,7 +626,7 @@ func TestBusFactor2(t *testing.T) {
 		var ramp = metrics.RampUp(jsonRes, 70)
 ========
 // 		var ramp = RampUp(jsonRes, 70)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if ramp < 0 || ramp > 1 {
@@ -696,7 +666,7 @@ func TestBusFactor2(t *testing.T) {
 		var resp = metrics.ResponsiveMaintainer(jsonRes)
 ========
 // 		var resp = ResponsiveMaintainer(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if resp < 0 || resp > 1 {
 // 			t.Fatalf("Responsive Maintainer is out of range")
@@ -903,7 +873,6 @@ func TestNetScore2(t *testing.T) {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
->>>>>>> 544c4da (Updating scoring and testing)
 		var bus = metrics.BusFactor(jsonRes)
 		var cor = metrics.Correctness(jsonRes)
 		var ramp = metrics.RampUp(jsonRes, 130)
@@ -916,21 +885,7 @@ func TestNetScore2(t *testing.T) {
 // 		var ramp = RampUp(jsonRes, 130)
 // 		var resp = ResponsiveMaintainer(jsonRes)
 // 		var net = NetScore(cor, bus, ramp, resp, false)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
-
-
-// 		if net < 0 || net > 1 {
-// 			t.Fatalf("Net Score is out of range")
-// 		}
-// 	}
-
-	
-
-// 	defer resp.Body.Close()
-// }
-
-<<<<<<<< HEAD:ratom/ratom_test.go
-=======
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 		if net < 0 || net > 1 {
@@ -943,7 +898,7 @@ func TestNetScore2(t *testing.T) {
 	defer resp.Body.Close()
 }
 
->>>>>>> 544c4da (Updating scoring and testing)
+>>>>>>> 7d64c38 (Updating scoring and testing)
 // Tests 13 - 18
 func TestBusFactor3(t *testing.T) {
 	src := oauth2.StaticTokenSource(
@@ -958,7 +913,7 @@ func TestBusFactor3(t *testing.T) {
 // 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 // 	)
 // 	httpClient := oauth2.NewClient(context.Background(), src)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 	resp, error := httpClient.Get(endpoint3)
 
@@ -983,7 +938,7 @@ func TestBusFactor3(t *testing.T) {
 		var bus = metrics.BusFactor(jsonRes)
 ========
 // 		var bus = BusFactor(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if bus < 0 || bus > 1 {
 // 			t.Fatalf("Bus is out of range")
@@ -1022,7 +977,7 @@ func TestBusFactor3(t *testing.T) {
 		var cor = metrics.Correctness(jsonRes)
 ========
 // 		var cor = Correctness(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if cor < 0 || cor > 1 {
@@ -1064,7 +1019,7 @@ func TestBusFactor3(t *testing.T) {
 		var ramp = metrics.RampUp(jsonRes, 600)
 ========
 // 		var ramp = RampUp(jsonRes, 600)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if ramp < 0 || ramp > 1 {
@@ -1104,7 +1059,7 @@ func TestBusFactor3(t *testing.T) {
 		var resp = metrics.ResponsiveMaintainer(jsonRes)
 ========
 // 		var resp = ResponsiveMaintainer(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if resp < 0 || resp > 1 {
 // 			t.Fatalf("Responsive Maintainer is out of range")
@@ -1311,7 +1266,7 @@ func TestNetScore3(t *testing.T) {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
->>>>>>> 544c4da (Updating scoring and testing)
+>>>>>>> 7d64c38 (Updating scoring and testing)
 		var bus = metrics.BusFactor(jsonRes)
 		var cor = metrics.Correctness(jsonRes)
 		var ramp = metrics.RampUp(jsonRes, 74)
@@ -1324,7 +1279,7 @@ func TestNetScore3(t *testing.T) {
 // 		var ramp = RampUp(jsonRes, 74)
 // 		var resp = ResponsiveMaintainer(jsonRes)
 // 		var net = NetScore(cor, bus, ramp, resp, false)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 
 // 		if net < 0 || net > 1 {
@@ -1339,7 +1294,7 @@ func TestNetScore3(t *testing.T) {
 // Test 19
 ========
 // // Test 19
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // func TestBusFactor_private(t *testing.T) {
 // 	src := oauth2.StaticTokenSource(
@@ -1370,7 +1325,7 @@ func TestNetScore3(t *testing.T) {
 		var bus = metrics.BusFactor(jsonRes)
 ========
 // 		var bus = BusFactor(jsonRes)
->>>>>>>> 544c4da (Updating scoring and testing):ratom/metrics/metrics_test.go
+>>>>>>>> 7d64c38 (Updating scoring and testing):ratom/metrics/metrics_test.go
 
 // 		if bus < 0 || bus > 1 {
 // 			t.Fatalf("Bus is out of range")
@@ -1426,4 +1381,3 @@ func TestBusFactor_private(t *testing.T) {
 
 	defer resp.Body.Close()
 }
->>>>>>> 544c4da (Updating scoring and testing)
