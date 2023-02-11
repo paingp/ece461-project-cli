@@ -85,6 +85,15 @@ func Clone(repo string) string {
 	err := os.MkdirAll(dir, 0777)
 
 	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer os.RemoveAll(dir)
+	// log.Println(dir)
+	// log.Println(repo)
+
+	_, err = git.PlainClone(dir, false, &git.CloneOptions{
+		URL:          repo,
 		panic(err)
 		return ""
 	}
@@ -96,7 +105,7 @@ func Clone(repo string) string {
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL: repo + ".git",
 		SingleBranch: true,
-		Depth: 1,
+		Depth:        1,
 	})
 
 	if err != nil {
