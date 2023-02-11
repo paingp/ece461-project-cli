@@ -1,4 +1,11 @@
 #include "../headers/test.h"
+#include <regex>
+#include <fstream>
+#include <string>
+#include <iostream>
+
+
+using namespace std;
 
 // Test Suite for Build command
 void build_tests(int* tests_total, int* tests_passed) {
@@ -79,44 +86,57 @@ int master_test() {
     tests_passed += log_passed;
 
     // Getting go tests
-    system("go test -cover -v ./ratom/metrics > test_output.txt");
+    system("go test -cover -v ./ratom > test_output.txt");
 
-    FILE* fptr = fopen("test_output.txt", "r");
 
-    if(fptr == NULL) {
-        printf("Go testing output file could not be opened.\n");
-    } 
+    std::ifstream testText;
+    std::string line;
+    std::string coverage_reg;
+    std::cmatch m;
 
-    char buffer[1100];
-    fread(buffer, 1100, 1, fptr);
-
-    int cntr = 0;
-    for(int i = 0; i < 990; i++) {
-        cntr++;
-        if(buffer[i] == '\n') {
-            cntr = 0;
-        }
-        if(cntr == 5) {
-            //printf("%c%c%c%c\n", buffer[i], buffer[i + 1], buffer[i + 2], buffer[i + 3]);
-            if(buffer[i] == 'P') {
+    testText.open("test_output.txt");
+    if (testText.good())
+    {
+        while (getline(testText, line))
+        {
+            std::regex_search(line.c_str(), m, std::regex("=== RUN"));
+            if(!m.empty()) {
+                tests_total++;
+            }
+            std::regex_search(line.c_str(), m, std::regex("--- PASS:"));
+            if(!m.empty()) {
                 tests_passed++;
-                tests_total++;
             }
-            else if(buffer[i] == 'R') {
-                continue;
-            }
-            else {
-                tests_total++;
+            std::regex_search(line.c_str(), m, std::regex("coverage: [0-9][0-9].[0-9]%"));
+            if(!m.empty()) {
+                //printf("%s\n", m[0].str().c_str());
+                break;
             }
         }
     }
 
-    fseek(fptr, 1001, SEEK_SET);
-    char coverage[6];
-    for(int i = 0; i < 4; i++) {
-        coverage[i] = fgetc(fptr);
+    testText.close();
+
+    // line = "";
+
+    // for(int i = 0; i < 5; i++) {
+    //     line += m[0].str();
+    // }
+
+    char coverage[4];
+
+    for(int i = 0; i < 4; i ++) {
+        //printf("%c\n", m[0].str().c_str()[i + 10]);
+        coverage[i] = m[0].str().c_str()[i + 10];
     }
-    coverage[4] = '%';
+
+
+    // fseek(fptr, 1053, SEEK_SET);
+    // char coverage[6];
+    // for(int i = 0; i < 4; i++) {
+    //     coverage[i] = fgetc(fptr);
+    // }
+    // coverage[4] = '%';
 
     //system("rm temp.txt");
 
@@ -124,8 +144,8 @@ int master_test() {
     // Outputting to stdout;
     fprintf(stdout, "Total: %d\n", tests_total);
     fprintf(stdout, "Passed: %d\n", tests_passed);
-    fprintf(stdout, "Coverage %s\n", coverage);
-    fprintf(stdout, "%d/%d test cases passed. %s line coverage achieved.\n", tests_passed, tests_total, coverage);
+    fprintf(stdout, "Coverage: %s%%\n", coverage);
+    fprintf(stdout, "%d/%d test cases passed. %s%% line coverage achieved.\n", tests_passed, tests_total, coverage);
 
     return EXIT_SUCCESS;
 }

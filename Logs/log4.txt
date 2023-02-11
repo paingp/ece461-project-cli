@@ -905,3 +905,522 @@ Function: loggerUpdateTwo logging information on line 60
 
 
 text to append
+Command Successful:    Sat Feb 11 15:12:42 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:13:44 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:17:38 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:18:58 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:19:38 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:20:40 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 15:21:16 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:21:43 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:23:33 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:24:32 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:26:56 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 15:27:33 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:28:57 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:29:27 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:30:41 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:34:44 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:36:24 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:38:34 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 15:39:07 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:39:48 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:43:04 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:43:36 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:44:09 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 15:44:29 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:44:50 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+
+Function: getEndpoint called on score.go at line 124
+Function: metrics.Correctness called on score.go at line 175
+Function: metrics.BusFactor called on score.go at line 179
+Function: metrics.RampUp called on score.go at line 183
+Function: metrics.ResponsiveMaintainer called on score.go at line 187
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+
+
+Command Successful:    Sat Feb 11 15:46:09 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+Command Successful:    Sat Feb 11 16:00:31 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 16:01:01 2023
+Command ran was:       ./run RUN_URL
+
+Output:
+{https://www.npmjs.com/package/express 0.59062773 0.72499996 0.3139365 1 0.543 true}
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+{https://www.npmjs.com/package/browserify 0.5522359 0.35 0.29210263 1 0.71999997 true}
+{https://github.com/cloudinary/cloudinary_npm 0.40918306 0.1 0.26480874 1 0.386 true}
+{https://github.com/nullivex/nodist 0.39031586 0.1 0.18875962 1 0.417 true}
+
+
+Command Successful:    Sat Feb 11 16:04:33 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 16:07:39 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+Command Successful:    Sat Feb 11 16:08:02 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+Command Successful:    Sat Feb 11 16:09:56 2023
+Command ran was:       ./run test
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+Command Successful:    Sat Feb 11 16:24:53 2023
+Command ran was:       ./run test
