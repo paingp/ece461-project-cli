@@ -3,6 +3,7 @@ package ratom
 import (
 	"context"
 	"encoding/json"
+
 	//"fmt"
 	"io"
 	"log"
@@ -80,7 +81,7 @@ func Clone(repo string) string {
 
 	lastIdx := strings.LastIndex(repo, "/")
 	//fmt.Println(repo[lastIdx + 1:])
-	dir := "temp/" + repo[lastIdx + 1:]
+	dir := "temp/" + repo[lastIdx+1:]
 
 	err := os.MkdirAll(dir, 0777)
 
@@ -93,9 +94,9 @@ func Clone(repo string) string {
 	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
-		URL: repo + ".git",
+		URL:          repo + ".git",
 		SingleBranch: true,
-		Depth: 1,
+		Depth:        1,
 	})
 
 	if err != nil {
@@ -129,7 +130,7 @@ func Analyze(url string, client *http.Client) Module {
 	if error != nil {
 		panic(error)
 	}
-	
+
 	//fmt.Println(Data.Repository.CommitComments.TotalCount)
 
 	if resp.StatusCode == http.StatusOK {
@@ -145,7 +146,7 @@ func Analyze(url string, client *http.Client) Module {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		// GRAPH QL 
+		// GRAPH QL
 		owner_map := jsonRes["owner"].(map[string]interface{})
 
 		var Data struct {
@@ -158,18 +159,18 @@ func Analyze(url string, client *http.Client) Module {
 				}
 			} `graphql:"repository(owner: $owner, name: $name)"`
 		}
-	
+
 		variables := map[string]interface{}{
 			"owner": githubv4.String(owner_map["login"].(string)),
 			"name":  githubv4.String(jsonRes["name"].(string)),
 		}
-	
+
 		graphQLClient := githubv4.NewClient(client)
 		error = graphQLClient.Query(context.Background(), &Data, variables)
 		if error != nil {
 			panic(error)
 		}
-		
+
 		//name := jsonRes["id"].(float64)
 		correctnessScore = metrics.Correctness(jsonRes)
 		lineNumb := metrics.File_line()
@@ -187,7 +188,6 @@ func Analyze(url string, client *http.Client) Module {
 		lineNumb = metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.ResponsiveMaintainer called on score.go at line "+lineNumb)
 
-
 		license = metrics.License(dir)
 		lineNumb = metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.License called on score.go at line "+lineNumb)
@@ -201,7 +201,10 @@ func Analyze(url string, client *http.Client) Module {
 		correctnessScore = -1.0
 		busFactor = -1.0
 		responsiveMaintainer = -1.0
-		license = false 
+		license = false
+
+		lineNumb = metrics.File_line()
+		metrics.Functions = append(metrics.Functions, "Invalid endpoint / URL given could not retrieve API data! "+lineNumb)
 	}
 
 	defer resp.Body.Close()
