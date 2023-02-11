@@ -86,8 +86,12 @@ func Clone(repo string) string {
 	err := os.MkdirAll(dir, 0777)
 
 	if err != nil {
+<<<<<<< HEAD
 		panic(err)
 		return ""
+=======
+		log.Fatal(err)
+>>>>>>> 98f14eb (Updated testing and scoring)
 	}
 
 	defer os.RemoveAll(dir)

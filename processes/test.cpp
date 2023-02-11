@@ -77,7 +77,7 @@ int master_test() {
     tests_passed += log_passed;
 
 
-    system("go test ./ratom > temp.txt");
+    system("go test ./ratom/metrics > temp.txt");
     //system("rm temp.txt");
 
     int coverage = 0;
