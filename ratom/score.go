@@ -3,14 +3,14 @@ package ratom
 import (
 	"encoding/json"
 	"io/ioutil"
-	//"log"
+	"log"
 	"net/http"
 	"os"
 	//"os/exec"
 	"strings"
 
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
-	//"github.com/go-git/go-git/v5"
+	"github.com/go-git/go-git/v5"
 )
 
 var GITHUB_TOKEN string
@@ -82,26 +82,26 @@ func Clone(repo string) {
 		GITHUB_TOKEN = GetToken()
 	}
 
-	//dir, err := os.MkdirTemp("temp", "repo")
+	dir, err := os.MkdirTemp("temp", "repo")
 	//fmt.Println(url)
 
-	// if err != nil {
-	// 	panic(err)
-	// }
+	if err != nil {
+		panic(err)
+	}
 
-	// defer os.RemoveAll(dir)
-	// log.Println(dir)
-	// log.Println(repo)
+	defer os.RemoveAll(dir)
+	log.Println(dir)
+	log.Println(repo)
 
-	// _, err = git.PlainClone(dir, false, &git.CloneOptions{
-	// 	URL: repo,
-	// 	SingleBranch: true,
-	// 	Depth: 1,
-	// })
+	_, err = git.PlainClone(dir, false, &git.CloneOptions{
+		URL: repo,
+		SingleBranch: true,
+		Depth: 1,
+	})
 		
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// cmd := exec.Command("ls | grep -i readme", dir)
 	// out, err := cmd.Output()
