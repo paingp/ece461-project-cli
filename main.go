@@ -21,7 +21,7 @@ import (
 
 // Function to get the current line number - citation needed
 func main() {
-	// Read input file
+	// Check if input file can be opened for read
 	filePath := os.Args[1]
 
 	file, err := os.Open(filePath)
@@ -29,12 +29,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 
-	//var urls []string
-
+	// Load environment variables from .env file
 	err = godotenv.Load(".env")
 	if err != nil {
 		panic("Error loading .env file")
@@ -46,11 +46,18 @@ func main() {
 	)
 	httpClient := oauth2.NewClient(context.Background(), src)
 
+	// Create temp directory to store the directories for each of the repositories
+	_, err = os.Stat("temp")
+    if !os.IsNotExist(err) {
+        os.RemoveAll("temp")
+    }
+
 	err = os.Mkdir("temp", 0770)		// read, write, and execute access for file owner and group owner
 	if err != nil {
 		panic("Error creating temp directory")
 	}
 
+	// Determine log level
 	logLevel, err := strconv.Atoi(os.Getenv("LOG_LEVEL"))
 
 	if err != nil {
@@ -96,42 +103,4 @@ func main() {
 		ratom.LoggerVerbTwo(modules)
 	}
 
-	// Load .env file
-	//
-	// requestURL := "https://api.github.com/repos/lencx/ChatGPT"
-	// resp, error := httpClient.Get(requestURL)
-
-	// if error != nil {
-	// 	panic(error)
-	// }
-
-	// defer resp.Body.Close()
-
-	// body, error := ioutil.ReadAll(resp.Body)
-	// if error != nil {
-	// 	panic(error)
-	// }
-
-	// fmt.Println(string(body))
-
-	// // Use GitHub GrapQL API via githubv4 library
-
-	// client := githubv4.NewClient(httpClient)
-	// fmt.Println(os.Getenv("GITHUB_TOKEN"))
-
-	// // Variable to store results of GraphQL query
-	// var q struct {
-	// 	Viewer struct {
-	// 		Login     string
-	// 		CreatedAt time.Time
-	// 	}
-	// }
-
-	// error = client.Query(context.Background(), &q, nil)
-	// if error != nil {
-	// 	panic(error)
-	// }
-
-	// fmt.Println(q.Viewer.Login)
-	// fmt.Println(q.Viewer.CreatedAt)
 }
