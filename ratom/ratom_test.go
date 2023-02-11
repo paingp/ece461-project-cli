@@ -15,7 +15,7 @@ import (
 	"golang.org/x/oauth2"
 )
 
-var file = "https://github.com/cloudinary/cloudinary_npm"
+var file = "https://api.github.com/reposlodash/lodash"
 var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
 var testFile = "tests.txt"
 
@@ -47,7 +47,7 @@ func TestScore(t *testing.T) {
 	}
 
 	if module.BusFactor > 1 || module.BusFactor < 0 {
-		t.Fatalf("Bus Factor score out of range")
+		t.Fatalf("Bus Factor score out of range %f", module.BusFactor)
 	} else {
 		tests_passed += 1
 	}
@@ -156,7 +156,7 @@ func TestCorrectness(t *testing.T) {
 		var cor = metrics.Correctness(jsonRes)
 
 		if cor < 0 || cor > 1 {
-			t.Fatalf("Bus is out of range")
+			t.Fatalf("Cor is out of range %f", cor)
 		}
 	}
 

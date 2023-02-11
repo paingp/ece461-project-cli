@@ -78,7 +78,7 @@ int master_test() {
 
 
     system("go test ./ratom > temp.txt");
-    system("rm temp.txt");
+    //system("rm temp.txt");
 
     int coverage = 0;
     // Outputting to stdout;
