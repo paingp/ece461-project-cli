@@ -3,6 +3,7 @@ package ratom
 import (
 	"context"
 	"encoding/json"
+	//"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -87,22 +88,14 @@ func Clone(repo string) string {
 		log.Fatal(err)
 	}
 
-	defer os.RemoveAll(dir)
+	//defer os.RemoveAll(dir)
 	// log.Println(dir)
 	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
-		URL:          repo,
-		panic(err)
-		return ""
-	}
-
-	//defer os.RemoveAll(dir)
-
-	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL: repo + ".git",
 		SingleBranch: true,
-		Depth:        1,
+		Depth: 1,
 	})
 
 	if err != nil {

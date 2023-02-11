@@ -86,3 +86,13 @@ Command ran was:       ./run RUN_URL
 
 
 
+
+
+Output:
+{https://github.com/cloudinary/cloudinary_npm NaN 0.1 1 1 NaN true}
+{https://www.npmjs.com/package/express NaN 0.72499996 1 1 NaN true}
+{https://github.com/nullivex/nodist NaN 0.1 1 1 NaN true}
+{https://github.com/lodash/lodash NaN 0.475 1 1 NaN true}
+{https://www.npmjs.com/package/browserify NaN 0.35 1 1 NaN true}
+
+
