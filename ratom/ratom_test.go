@@ -21,6 +21,7 @@ func TestAnalyze(t *testing.T) {
 	httpClient := oauth2.NewClient(context.Background(), src)
 
 	module := Analyze(file, httpClient)
+	os.RemoveAll("temp")
 	var modules []Module
 	modules = append(modules, module)
 	LoggerVerbOne(modules)
