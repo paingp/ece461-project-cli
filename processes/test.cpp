@@ -99,10 +99,6 @@ int master_test() {
     {
         while (getline(testText, line))
         {
-            std::regex_search(line.c_str(), m, std::regex("=== RUN"));
-            if(!m.empty()) {
-                tests_total++;
-            }
             std::regex_search(line.c_str(), m, std::regex("--- PASS:"));
             if(!m.empty()) {
                 tests_passed++;

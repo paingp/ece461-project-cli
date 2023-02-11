@@ -1,37 +1,37 @@
 === RUN   TestAnalyze
---- PASS: TestAnalyze (8.28s)
+--- PASS: TestAnalyze (16.31s)
 === RUN   TestBusFactor
 --- PASS: TestBusFactor (0.13s)
 === RUN   TestCorrectness
---- PASS: TestCorrectness (0.11s)
+--- PASS: TestCorrectness (0.18s)
 === RUN   TestRampUp
---- PASS: TestRampUp (0.23s)
+--- PASS: TestRampUp (0.13s)
 === RUN   TestResponsiveMaintainer
---- PASS: TestResponsiveMaintainer (0.15s)
+--- PASS: TestResponsiveMaintainer (0.13s)
 === RUN   TestNetScore
 --- PASS: TestNetScore (0.12s)
 === RUN   TestBusFactor2
---- PASS: TestBusFactor2 (0.25s)
+--- PASS: TestBusFactor2 (0.13s)
 === RUN   TestCorrectness2
---- PASS: TestCorrectness2 (0.09s)
+--- PASS: TestCorrectness2 (0.10s)
 === RUN   TestRampUp2
---- PASS: TestRampUp2 (0.10s)
+--- PASS: TestRampUp2 (0.09s)
 === RUN   TestResponsiveMaintainer2
---- PASS: TestResponsiveMaintainer2 (0.10s)
+--- PASS: TestResponsiveMaintainer2 (0.09s)
 === RUN   TestNetScore2
 --- PASS: TestNetScore2 (0.23s)
 === RUN   TestBusFactor3
---- PASS: TestBusFactor3 (0.14s)
+--- PASS: TestBusFactor3 (0.15s)
 === RUN   TestCorrectness3
 --- PASS: TestCorrectness3 (0.11s)
 === RUN   TestRampUp3
---- PASS: TestRampUp3 (0.28s)
+--- PASS: TestRampUp3 (0.13s)
 === RUN   TestResponsiveMaintainer3
---- PASS: TestResponsiveMaintainer3 (0.14s)
+--- PASS: TestResponsiveMaintainer3 (0.16s)
 === RUN   TestNetScore3
---- PASS: TestNetScore3 (0.12s)
+--- PASS: TestNetScore3 (0.13s)
 === RUN   TestBusFactor_private
---- PASS: TestBusFactor_private (0.26s)
+--- PASS: TestBusFactor_private (0.10s)
 PASS
 coverage: 72.4% of statements
-ok  	github.com/paingp/ece461-project-cli/ratom	11.017s	coverage: 72.4% of statements
+ok  	github.com/paingp/ece461-project-cli/ratom	18.443s	coverage: 72.4% of statements
