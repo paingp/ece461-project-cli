@@ -26,9 +26,13 @@ func TestAnalyze(t *testing.T) {
 
 	module := Analyze(file, httpClient)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	os.RemoveAll("temp")
 =======
 >>>>>>> 7d64c38 (Updating scoring and testing)
+=======
+	os.RemoveAll("temp")
+>>>>>>> 14b31df (Removing temp folder after testing)
 	var modules []Module
 	modules = append(modules, module)
 	LoggerVerbOne(modules)
