@@ -78,7 +78,7 @@ func License(directory string) bool {
 	licenses := [9]string{"MIT", "LGPLv2.1", "Expat", "X11", "MPL-2.0", "Mozilla Public", "Artistic License 2", "GPLv2", "GPLv3"}
 
 	for i := 0; i < len(text); i++ {
-		fmt.Println(text[i])
+		//fmt.Println(text[i])
 		for j := 0; j < len(licenses); j++ {
 			re = regexp.MustCompile("(?i)" + licenses[j])
 			if (re.MatchString(text[i])) {
