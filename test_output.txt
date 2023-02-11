@@ -1,0 +1,23 @@
+=== RUN   TestAnalyze
+GoLang could not find logging file!
+--- FAIL: TestAnalyze (16.69s)
+panic: open : no such file or directory [recovered]
+	panic: open : no such file or directory
+
+goroutine 6 [running]:
+testing.tRunner.func1.2({0x7e1f80, 0xc000421c50})
+	/usr/lib/go-1.18/src/testing/testing.go:1389 +0x24e
+testing.tRunner.func1()
+	/usr/lib/go-1.18/src/testing/testing.go:1392 +0x39f
+panic({0x7e1f80, 0xc000421c50})
+	/usr/lib/go-1.18/src/runtime/panic.go:838 +0x207
+github.com/paingp/ece461-project-cli/ratom.LoggerVerbOne({0xc000421bf0, 0x1, 0xc0002a8480?})
+	/home/shay/a/ng118/ECE461/ece461-project-cli/ratom/logger.go:25 +0x24c
+github.com/paingp/ece461-project-cli/ratom.TestAnalyze(0x0?)
+	/home/shay/a/ng118/ECE461/ece461-project-cli/ratom/ratom_test.go:27 +0x1ac
+testing.tRunner(0xc0001bfba0, 0x87e7c0)
+	/usr/lib/go-1.18/src/testing/testing.go:1439 +0x102
+created by testing.(*T).Run
+	/usr/lib/go-1.18/src/testing/testing.go:1486 +0x35f
+FAIL	github.com/paingp/ece461-project-cli/ratom	16.709s
+FAIL
