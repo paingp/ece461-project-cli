@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
-	"fmt"
+	//"fmt"
 )
 
 var readme string
@@ -46,7 +46,7 @@ func License(directory string) bool {
 	}
 
 	if readme != "" {
-		fmt.Println(readme)
+		//fmt.Println(readme)
 		file, err := os.Open(readme)
 
 		if err != nil {
@@ -60,7 +60,7 @@ func License(directory string) bool {
 	
 		for scanner.Scan() {
 			if bytes.Contains(scanner.Bytes(), toFind) {
-				fmt.Println(scanner.Text())
+				//fmt.Println(scanner.Text())
 			}
 		}
 	}

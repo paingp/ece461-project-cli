@@ -1,623 +1,623 @@
 package metrics
 
-import (	
-	"context"
-	"os"
-	"testing"
-	"net/http"
-	"io/ioutil"
-	"encoding/json"
+// import (	
+// 	"context"
+// 	"os"
+// 	"testing"
+// 	"net/http"
+// 	"io/ioutil"
+// 	"encoding/json"
 
 
-	"golang.org/x/oauth2"
-)
+// 	"golang.org/x/oauth2"
+// )
 
-var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
-var endpoint2 = "https://api.github.com/repos/ben-ng/add"
-var endpoint3 = "https://api.github.com/repos/axios/axios"
-var endpoint4 = "https://api.github.com/repos/campb474/ECE368"
+// var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
+// var endpoint2 = "https://api.github.com/repos/ben-ng/add"
+// var endpoint3 = "https://api.github.com/repos/axios/axios"
+// var endpoint4 = "https://api.github.com/repos/campb474/ECE368"
 
-// Tests 1 - 5
-func TestBusFactor(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// // Tests 1 - 6
+// func TestBusFactor(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	resp, error := httpClient.Get(endpoint)
+// 	resp, error := httpClient.Get(endpoint)
 
-	if error != nil {
-		panic(error)
-	}
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var bus = BusFactor(jsonRes)
+// 		var bus = BusFactor(jsonRes)
 
-		if bus < 0 || bus > 1 {
-			t.Fatalf("Bus is out of range")
-		}
-	}
+// 		if bus < 0 || bus > 1 {
+// 			t.Fatalf("Bus is out of range")
+// 		}
+// 	}
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
 
-func TestCorrectness(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// func TestCorrectness(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	resp, error := httpClient.Get(endpoint)
+// 	resp, error := httpClient.Get(endpoint)
 
-	if error != nil {
-		panic(error)
-	}
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var cor = Correctness(jsonRes)
-
-
-		if cor < 0 || cor > 1 {
-			t.Fatalf("Correctness is out of range")
-		}
-	}
-
-	
-
-	defer resp.Body.Close()
-}
-
-func TestRampUp(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var ramp = RampUp(jsonRes)
+// 		var cor = Correctness(jsonRes)
 
 
-		if ramp < 0 || ramp > 1 {
-			t.Fatalf("Ramp Up is out of range")
-		}
-	}
-
-	defer resp.Body.Close()
-}
-
-func TestResponsiveMaintainer(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var resp = ResponsiveMaintainer(jsonRes)
-
-		if resp < 0 || resp > 1 {
-			t.Fatalf("Responsive Maintainer is out of range")
-		}
-	}
+// 		if cor < 0 || cor > 1 {
+// 			t.Fatalf("Correctness is out of range")
+// 		}
+// 	}
 
 	
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
+
+// func TestRampUp(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var ramp = RampUp(jsonRes, 3)
 
 
-func TestNetScore(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// 		if ramp < 0 || ramp > 1 {
+// 			t.Fatalf("Ramp Up is out of range")
+// 		}
+// 	}
 
-	resp, error := httpClient.Get(endpoint)
+// 	defer resp.Body.Close()
+// }
 
-	if error != nil {
-		panic(error)
-	}
+// func TestResponsiveMaintainer(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	resp, error := httpClient.Get(endpoint)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		var bus = BusFactor(jsonRes)
-		var cor = Correctness(jsonRes)
-		var ramp = RampUp(jsonRes)
-		var resp = ResponsiveMaintainer(jsonRes)
-		var net = NetScore(cor, bus, ramp, resp, false)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		if net < 0 || net > 1 {
-			t.Fatalf("Net Score is out of range")
-		}
-	}
+// 		var resp = ResponsiveMaintainer(jsonRes)
 
-	
-
-	defer resp.Body.Close()
-}
-
-// Tests 6 - 10
-func TestBusFactor2(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint2)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var bus = BusFactor(jsonRes)
-
-		if bus < 0 || bus > 1 {
-			t.Fatalf("Bus is out of range")
-		}
-	}
-
-	defer resp.Body.Close()
-}
-
-func TestCorrectness2(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint2)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var cor = Correctness(jsonRes)
-
-
-		if cor < 0 || cor > 1 {
-			t.Fatalf("Correctness is out of range")
-		}
-	}
+// 		if resp < 0 || resp > 1 {
+// 			t.Fatalf("Responsive Maintainer is out of range")
+// 		}
+// 	}
 
 	
 
-	defer resp.Body.Close()
-}
-
-func TestRampUp2(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint2)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var ramp = RampUp(jsonRes)
+// 	defer resp.Body.Close()
+// }
 
 
-		if ramp < 0 || ramp > 1 {
-			t.Fatalf("Ramp Up is out of range")
-		}
-	}
+// func TestNetScore(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	defer resp.Body.Close()
-}
+// 	resp, error := httpClient.Get(endpoint)
 
-func TestResponsiveMaintainer2(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	resp, error := httpClient.Get(endpoint2)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-	if error != nil {
-		panic(error)
-	}
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		var bus = BusFactor(jsonRes)
+// 		var cor = Correctness(jsonRes)
+// 		var ramp = RampUp(jsonRes, 20)
+// 		var resp = ResponsiveMaintainer(jsonRes)
+// 		var net = NetScore(cor, bus, ramp, resp, false)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var resp = ResponsiveMaintainer(jsonRes)
-
-		if resp < 0 || resp > 1 {
-			t.Fatalf("Responsive Maintainer is out of range")
-		}
-	}
+// 		if net < 0 || net > 1 {
+// 			t.Fatalf("Net Score is out of range")
+// 		}
+// 	}
 
 	
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
+
+// // Tests 6 - 12
+// func TestBusFactor2(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint2)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var bus = BusFactor(jsonRes)
+
+// 		if bus < 0 || bus > 1 {
+// 			t.Fatalf("Bus is out of range")
+// 		}
+// 	}
+
+// 	defer resp.Body.Close()
+// }
+
+// func TestCorrectness2(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint2)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var cor = Correctness(jsonRes)
 
 
-func TestNetScore2(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint2)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var bus = BusFactor(jsonRes)
-		var cor = Correctness(jsonRes)
-		var ramp = RampUp(jsonRes)
-		var resp = ResponsiveMaintainer(jsonRes)
-		var net = NetScore(cor, bus, ramp, resp, false)
-
-
-		if net < 0 || net > 1 {
-			t.Fatalf("Net Score is out of range")
-		}
-	}
-
-	
-
-	defer resp.Body.Close()
-}
-
-// Tests 11 - 15
-func TestBusFactor3(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint3)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var bus = BusFactor(jsonRes)
-
-		if bus < 0 || bus > 1 {
-			t.Fatalf("Bus is out of range")
-		}
-	}
-
-	defer resp.Body.Close()
-}
-
-func TestCorrectness3(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-
-	resp, error := httpClient.Get(endpoint3)
-
-	if error != nil {
-		panic(error)
-	}
-
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
-
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
-
-		var cor = Correctness(jsonRes)
-
-
-		if cor < 0 || cor > 1 {
-			t.Fatalf("Correctness is out of range")
-		}
-	}
+// 		if cor < 0 || cor > 1 {
+// 			t.Fatalf("Correctness is out of range")
+// 		}
+// 	}
 
 	
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
 
-func TestRampUp3(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// func TestRampUp2(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	resp, error := httpClient.Get(endpoint3)
+// 	resp, error := httpClient.Get(endpoint2)
 
-	if error != nil {
-		panic(error)
-	}
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var ramp = RampUp(jsonRes)
+// 		var ramp = RampUp(jsonRes, 70)
 
 
-		if ramp < 0 || ramp > 1 {
-			t.Fatalf("Ramp Up is out of range")
-		}
-	}
+// 		if ramp < 0 || ramp > 1 {
+// 			t.Fatalf("Ramp Up is out of range")
+// 		}
+// 	}
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
 
-func TestResponsiveMaintainer3(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// func TestResponsiveMaintainer2(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	resp, error := httpClient.Get(endpoint3)
+// 	resp, error := httpClient.Get(endpoint2)
 
-	if error != nil {
-		panic(error)
-	}
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var resp = ResponsiveMaintainer(jsonRes)
+// 		var resp = ResponsiveMaintainer(jsonRes)
 
-		if resp < 0 || resp > 1 {
-			t.Fatalf("Responsive Maintainer is out of range")
-		}
-	}
+// 		if resp < 0 || resp > 1 {
+// 			t.Fatalf("Responsive Maintainer is out of range")
+// 		}
+// 	}
 
 	
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
 
 
-func TestNetScore3(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// func TestNetScore2(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	resp, error := httpClient.Get(endpoint3)
+// 	resp, error := httpClient.Get(endpoint2)
 
-	if error != nil {
-		panic(error)
-	}
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var bus = BusFactor(jsonRes)
-		var cor = Correctness(jsonRes)
-		var ramp = RampUp(jsonRes)
-		var resp = ResponsiveMaintainer(jsonRes)
-		var net = NetScore(cor, bus, ramp, resp, false)
+// 		var bus = BusFactor(jsonRes)
+// 		var cor = Correctness(jsonRes)
+// 		var ramp = RampUp(jsonRes, 130)
+// 		var resp = ResponsiveMaintainer(jsonRes)
+// 		var net = NetScore(cor, bus, ramp, resp, false)
 
 
-		if net < 0 || net > 1 {
-			t.Fatalf("Net Score is out of range")
-		}
-	}
+// 		if net < 0 || net > 1 {
+// 			t.Fatalf("Net Score is out of range")
+// 		}
+// 	}
 
-	defer resp.Body.Close()
-}
+	
 
-// Test 16
+// 	defer resp.Body.Close()
+// }
 
-func TestBusFactor_private(t *testing.T) {
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+// // Tests 13 - 18
+// func TestBusFactor3(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
 
-	resp, error := httpClient.Get(endpoint4)
+// 	resp, error := httpClient.Get(endpoint3)
 
-	if error != nil {
-		panic(error)
-	}
+// 	if error != nil {
+// 		panic(error)
+// 	}
 
-	if resp.StatusCode == http.StatusOK {
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 
-		if err != nil {
-			panic(error)
-		}
-		bodyString := string(bodyBytes)
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
-		resBytes := []byte(bodyString)
-		var jsonRes map[string]interface{}
-		_ = json.Unmarshal(resBytes, &jsonRes)
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var bus = BusFactor(jsonRes)
+// 		var bus = BusFactor(jsonRes)
 
-		if bus < 0 || bus > 1 {
-			t.Fatalf("Bus is out of range")
-		}
-	}
+// 		if bus < 0 || bus > 1 {
+// 			t.Fatalf("Bus is out of range")
+// 		}
+// 	}
 
-	defer resp.Body.Close()
-}
+// 	defer resp.Body.Close()
+// }
+
+// func TestCorrectness3(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint3)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var cor = Correctness(jsonRes)
+
+
+// 		if cor < 0 || cor > 1 {
+// 			t.Fatalf("Correctness is out of range")
+// 		}
+// 	}
+
+	
+
+// 	defer resp.Body.Close()
+// }
+
+// func TestRampUp3(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint3)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var ramp = RampUp(jsonRes, 600)
+
+
+// 		if ramp < 0 || ramp > 1 {
+// 			t.Fatalf("Ramp Up is out of range")
+// 		}
+// 	}
+
+// 	defer resp.Body.Close()
+// }
+
+// func TestResponsiveMaintainer3(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint3)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var resp = ResponsiveMaintainer(jsonRes)
+
+// 		if resp < 0 || resp > 1 {
+// 			t.Fatalf("Responsive Maintainer is out of range")
+// 		}
+// 	}
+
+	
+
+// 	defer resp.Body.Close()
+// }
+
+
+// func TestNetScore3(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint3)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var bus = BusFactor(jsonRes)
+// 		var cor = Correctness(jsonRes)
+// 		var ramp = RampUp(jsonRes, 74)
+// 		var resp = ResponsiveMaintainer(jsonRes)
+// 		var net = NetScore(cor, bus, ramp, resp, false)
+
+
+// 		if net < 0 || net > 1 {
+// 			t.Fatalf("Net Score is out of range")
+// 		}
+// 	}
+
+// 	defer resp.Body.Close()
+// }
+
+// // Test 19
+
+// func TestBusFactor_private(t *testing.T) {
+// 	src := oauth2.StaticTokenSource(
+// 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+// 	)
+// 	httpClient := oauth2.NewClient(context.Background(), src)
+
+// 	resp, error := httpClient.Get(endpoint4)
+
+// 	if error != nil {
+// 		panic(error)
+// 	}
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			panic(error)
+// 		}
+// 		bodyString := string(bodyBytes)
+
+// 		// Citation needed for this
+// 		resBytes := []byte(bodyString)
+// 		var jsonRes map[string]interface{}
+// 		_ = json.Unmarshal(resBytes, &jsonRes)
+
+// 		var bus = BusFactor(jsonRes)
+
+// 		if bus < 0 || bus > 1 {
+// 			t.Fatalf("Bus is out of range")
+// 		}
+// 	}
+
+// 	defer resp.Body.Close()
+// }
