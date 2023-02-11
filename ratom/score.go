@@ -195,6 +195,13 @@ func Analyze(url string, client *http.Client) Module {
 		netScore = metrics.NetScore(correctnessScore, busFactor, rampUp, responsiveMaintainer, license)
 		lineNumb = metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.NetScore called on score.go at line "+lineNumb)
+	} else {
+		netScore = -1.0
+		rampUp = -1.0
+		correctnessScore = -1.0
+		busFactor = -1.0
+		responsiveMaintainer = -1.0
+		license = false 
 	}
 
 	defer resp.Body.Close()

@@ -116,7 +116,7 @@ func TestRampUp(t *testing.T) {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var ramp = RampUp(jsonRes)
+		var ramp = RampUp(jsonRes, 12)
 
 
 		if ramp < 0 || ramp > 1 {
@@ -192,7 +192,7 @@ func TestNetScore(t *testing.T) {
 
 		var bus = BusFactor(jsonRes)
 		var cor = Correctness(jsonRes)
-		var ramp = RampUp(jsonRes)
+		var ramp = RampUp(jsonRes, 12)
 		var resp = ResponsiveMaintainer(jsonRes)
 		var net = NetScore(cor, bus, ramp, resp, false)
 
@@ -306,7 +306,7 @@ func TestRampUp2(t *testing.T) {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var ramp = RampUp(jsonRes)
+		var ramp = RampUp(jsonRes, 12)
 
 
 		if ramp < 0 || ramp > 1 {
@@ -382,7 +382,7 @@ func TestNetScore2(t *testing.T) {
 
 		var bus = BusFactor(jsonRes)
 		var cor = Correctness(jsonRes)
-		var ramp = RampUp(jsonRes)
+		var ramp = RampUp(jsonRes, 12)
 		var resp = ResponsiveMaintainer(jsonRes)
 		var net = NetScore(cor, bus, ramp, resp, false)
 
@@ -496,7 +496,7 @@ func TestRampUp3(t *testing.T) {
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		var ramp = RampUp(jsonRes)
+		var ramp = RampUp(jsonRes, 12)
 
 
 		if ramp < 0 || ramp > 1 {
@@ -572,7 +572,7 @@ func TestNetScore3(t *testing.T) {
 
 		var bus = BusFactor(jsonRes)
 		var cor = Correctness(jsonRes)
-		var ramp = RampUp(jsonRes)
+		var ramp = RampUp(jsonRes, 12)
 		var resp = ResponsiveMaintainer(jsonRes)
 		var net = NetScore(cor, bus, ramp, resp, false)
 
