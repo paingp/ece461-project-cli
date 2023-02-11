@@ -86,7 +86,7 @@ func Clone(repo string) {
 	//fmt.Println(url)
 
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	defer os.RemoveAll(dir)
