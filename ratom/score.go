@@ -3,12 +3,11 @@ package ratom
 import (
 	"context"
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
-	//"os/exec"
 	"strings"
 
 	"github.com/shurcooL/githubv4"
@@ -86,22 +85,18 @@ func Clone(repo string) string {
 	err := os.MkdirAll(dir, 0777)
 
 	if err != nil {
-<<<<<<< HEAD
 		panic(err)
 		return ""
-=======
-		log.Fatal(err)
->>>>>>> 98f14eb (Updated testing and scoring)
 	}
 
-	defer os.RemoveAll(dir)
+	//defer os.RemoveAll(dir)
 	// log.Println(dir)
 	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL: repo + ".git",
 		SingleBranch: true,
-		Depth:        1,
+		Depth: 1,
 	})
 
 	if err != nil {
