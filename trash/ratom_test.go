@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"io/ioutil"
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"strconv"
 	
 
@@ -15,24 +15,15 @@ import (
 	"golang.org/x/oauth2"
 )
 
-var file = "https://api.github.com/reposlodash/lodash"
+var file = "https://github.com/nullivex/nodist"
 var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
 var testFile = "tests.txt"
 
 // Test cases 1 - 6
 func TestScore(t *testing.T) {
 	// Create a token to and HTTP client to access the GitHub API
-	dat, err := os.ReadFile(testFile)
-	if err != nil {
-		fmt.Println("Error")
-	} 
+	tests_passed := 0
 
-	i, err := strconv.Atoi(string(dat))
-    if err != nil {
-        panic(err)
-    }
-	
-	var tests_passed = i
 	src := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
 	)
@@ -86,7 +77,7 @@ func TestScore(t *testing.T) {
 
 	var s2 = strconv.Itoa(tests_passed)
 
-	err = os.WriteFile("tests.txt", []byte(s2), 0644)
+	err := os.WriteFile("tests.txt", []byte(s2), 0644)
 
 	if err != nil {
         panic(err)
