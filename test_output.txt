@@ -1,0 +1,35 @@
+=== RUN   TestBusFactor
+--- PASS: TestBusFactor (0.24s)
+=== RUN   TestCorrectness
+--- PASS: TestCorrectness (0.11s)
+=== RUN   TestRampUp
+--- PASS: TestRampUp (0.17s)
+=== RUN   TestResponsiveMaintainer
+--- PASS: TestResponsiveMaintainer (0.14s)
+=== RUN   TestNetScore
+--- PASS: TestNetScore (0.14s)
+=== RUN   TestBusFactor2
+--- PASS: TestBusFactor2 (0.09s)
+=== RUN   TestCorrectness2
+--- PASS: TestCorrectness2 (0.10s)
+=== RUN   TestRampUp2
+--- PASS: TestRampUp2 (0.11s)
+=== RUN   TestResponsiveMaintainer2
+--- PASS: TestResponsiveMaintainer2 (0.09s)
+=== RUN   TestNetScore2
+--- PASS: TestNetScore2 (0.10s)
+=== RUN   TestBusFactor3
+--- PASS: TestBusFactor3 (0.15s)
+=== RUN   TestCorrectness3
+--- PASS: TestCorrectness3 (0.13s)
+=== RUN   TestRampUp3
+--- PASS: TestRampUp3 (0.13s)
+=== RUN   TestResponsiveMaintainer3
+--- PASS: TestResponsiveMaintainer3 (0.14s)
+=== RUN   TestNetScore3
+--- PASS: TestNetScore3 (0.12s)
+=== RUN   TestBusFactor_private
+--- PASS: TestBusFactor_private (0.10s)
+PASS
+coverage: 81.6% of statements
+ok  	github.com/paingp/ece461-project-cli/ratom/metrics	(cached)	coverage: 81.6% of statements
