@@ -3,6 +3,7 @@ package ratom
 import (
 	"context"
 	"encoding/json"
+	//"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -98,6 +99,8 @@ func Clone(repo string) string {
 	}
 
 	//defer os.RemoveAll(dir)
+	// log.Println(dir)
+	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL: repo + ".git",
