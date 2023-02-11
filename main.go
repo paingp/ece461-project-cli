@@ -14,7 +14,7 @@ import (
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
 
 	//"time"
-	"github.com/joho/godotenv"
+	//"github.com/joho/godotenv"
 	// "github.com/shurcooL/githubv4"
 	"golang.org/x/oauth2"
 )
