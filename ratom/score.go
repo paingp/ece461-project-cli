@@ -28,9 +28,10 @@ type Module struct {
 	RespMaint   float32
 	License     bool
 }
-
+//Function to get the GitHub URL from the npmurl input
 func getGithubUrl(url string) string {
 	before, after, found := strings.Cut(url, "www")
+	//Finding endpoints and checking for their existence
 	if found {
 		npmEndpoint := before + "registry" + after
 		npmEndpoint = strings.Replace(npmEndpoint, "com", "org", 1)
@@ -53,7 +54,8 @@ func getGithubUrl(url string) string {
 			resBytes := []byte(bodyString)
 			var npmRes map[string]interface{}
 			_ = json.Unmarshal(resBytes, &npmRes)
-
+			
+			//Checking for existence of GitHub url
 			if (npmRes["bugs"] == nil){
 				metrics.Functions = append(metrics.Functions, "Module is not hosted on GitHub or link cannot be found on line "+metrics.File_line())
 				return ""
@@ -72,6 +74,7 @@ func getGithubUrl(url string) string {
 	return url
 }
 
+//Get the endpoint and turn into https format
 func getEndpoint(url string) string {
 	index := strings.Index(url, "github")
 	url = "https://api." + strings.Replace(url[index:], "/", "/repos/", 1)
@@ -90,7 +93,6 @@ func Clone(repo string) string {
 	}
 
 	lastIdx := strings.LastIndex(repo, "/")
-	//fmt.Println(repo[lastIdx + 1:])
 	dir := "temp/" + repo[lastIdx+1:]
 
 	err := os.MkdirAll(dir, 0777)
@@ -98,10 +100,6 @@ func Clone(repo string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	//defer os.RemoveAll(dir)
-	// log.Println(dir)
-	// log.Println(repo)
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL:          repo + ".git",
@@ -115,9 +113,9 @@ func Clone(repo string) string {
 	}
 	return dir
 }
-
+//Function to find and analyze the validity of the http url input
 func Analyze(url string, client *http.Client) Module {
-
+	//Metric variables
 	var busFactor float32
 	var responsiveMaintainer float32
 	var correctnessScore float32
@@ -125,16 +123,14 @@ func Analyze(url string, client *http.Client) Module {
 	var license bool
 	var netScore float32
 
-	//oldURL := url
-
 	gitUrl := getGithubUrl(url)
 
+	//Checking for url availability
 	if gitUrl == "" {
 		metrics.Functions = append(metrics.Functions, "Can't find valid endpoint for input: "+url)
 		return Module{url, -1, -1, -1, -1, -1, false}
 	}
 
-	//fmt.Println(gitUrl)
 	dir := Clone(gitUrl)
 
 	endpoint := getEndpoint(gitUrl)
@@ -143,28 +139,29 @@ func Analyze(url string, client *http.Client) Module {
 
 	resp, error := client.Get(endpoint)
 
+	//Error checking for invalid endpoint
 	if error != nil {
 		metrics.Functions = append(metrics.Functions, "HTTP GET request to  "+endpoint+" returns an error on line "+metrics.File_line())
 		return Module{url, -1, -1, -1, -1, -1, false}
 	}
 
-	//fmt.Println(Data.Repository.CommitComments.TotalCount)
-
 	if resp.StatusCode == http.StatusOK {
 		bodyBytes, err := io.ReadAll(resp.Body)
 
 		if err != nil {
-			//log.Print("here")
 			panic(error)
 		}
 		bodyString := string(bodyBytes)
 
-		// Citation needed for this
+		// Refer to the following links for error printing and http parsing in Golang used in this file
+		//https://stackoverflow.com/questions/24809287/how-do-you-get-a-golang-program-to-print-the-line-number-of-the-error-it-just-ca
+		//https://rakaar.github.io/posts/2021-04-23-go-json-res-parse/
+
 		resBytes := []byte(bodyString)
 		var jsonRes map[string]interface{}
 		_ = json.Unmarshal(resBytes, &jsonRes)
 
-		// GRAPH QL
+		// GRAPH QL to get repository information
 		owner_map := jsonRes["owner"].(map[string]interface{})
 
 		var Data struct {
@@ -189,8 +186,7 @@ func Analyze(url string, client *http.Client) Module {
 			metrics.Functions = append(metrics.Functions, "GraphQL could not create a client in goLang on line "+metrics.File_line())
 			Data.Repository.CommitComments.TotalCount = 0
 		}
-
-		//name := jsonRes["id"].(float64)
+		//Metric function line call with respective metric scores
 		correctnessScore = metrics.Correctness(jsonRes)
 		lineNumb := metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.Correctness called on score.go at line "+lineNumb)
@@ -215,6 +211,7 @@ func Analyze(url string, client *http.Client) Module {
 		lineNumb = metrics.File_line()
 		metrics.Functions = append(metrics.Functions, "Function: metrics.NetScore called on score.go at line "+lineNumb)
 	} else {
+		//Invalid endpoint
 		netScore = -1.0
 		rampUp = -1.0
 		correctnessScore = -1.0
