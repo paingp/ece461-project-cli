@@ -1,5 +1,32 @@
 === RUN   TestAnalyze
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+GoLang could not find logging file!
+--- FAIL: TestAnalyze (10.67s)
+panic: open : no such file or directory [recovered]
+	panic: open : no such file or directory
+
+goroutine 6 [running]:
+testing.tRunner.func1.2({0x7e2f80, 0xc0005c0390})
+	/usr/lib/go-1.18/src/testing/testing.go:1389 +0x24e
+testing.tRunner.func1()
+	/usr/lib/go-1.18/src/testing/testing.go:1392 +0x39f
+panic({0x7e2f80, 0xc0005c0390})
+	/usr/lib/go-1.18/src/runtime/panic.go:838 +0x207
+github.com/paingp/ece461-project-cli/ratom.LoggerVerbOne({0xc0005c0360, 0x1, 0xc0002a8480?})
+	/home/shay/a/ng118/ECE461/ece461-project-cli/ratom/logger.go:25 +0x24c
+github.com/paingp/ece461-project-cli/ratom.TestAnalyze(0x0?)
+	/home/shay/a/ng118/ECE461/ece461-project-cli/ratom/ratom_test.go:27 +0x1ac
+testing.tRunner(0xc0001bfd40, 0x87f928)
+	/usr/lib/go-1.18/src/testing/testing.go:1439 +0x102
+created by testing.(*T).Run
+	/usr/lib/go-1.18/src/testing/testing.go:1486 +0x35f
+FAIL	github.com/paingp/ece461-project-cli/ratom	10.680s
+FAIL
+=======
+--- PASS: TestAnalyze (7.72s)
+=======
 --- PASS: TestAnalyze (7.42s)
 === RUN   TestAnalyzeNPM
 --- PASS: TestAnalyzeNPM (1.30s)
@@ -7,8 +34,10 @@
 --- PASS: TestAnalyzeNoGithub (0.34s)
 === RUN   TestBusFactor
 --- PASS: TestBusFactor (0.12s)
+>>>>>>> 3b5520ee0dd240fefc14b078fb90ee49ca7159cf
 =======
 --- PASS: TestAnalyze (5.95s)
+>>>>>>> 4ab999199de956538b7013b5567693459152c1f7
 === RUN   TestAnalyzeNPM
 --- PASS: TestAnalyzeNPM (1.32s)
 === RUN   TestAnalyzeNoGithub
@@ -68,5 +97,9 @@ ok  	github.com/paingp/ece461-project-cli/ratom	11.148s	coverage: 83.6% of state
 --- PASS: TestBusFactor_private (0.08s)
 PASS
 coverage: 84.3% of statements
+<<<<<<< HEAD
+ok  	github.com/paingp/ece461-project-cli/ratom	11.735s	coverage: 84.3% of statements
+>>>>>>> ade3697901fb6715e681733e18983f87d4e3fcbf
+=======
 ok  	github.com/paingp/ece461-project-cli/ratom	9.694s	coverage: 84.3% of statements
 >>>>>>> 4ab999199de956538b7013b5567693459152c1f7
