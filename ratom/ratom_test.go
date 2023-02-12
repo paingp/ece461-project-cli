@@ -72,6 +72,26 @@ func TestAnalyzeNoGithub(t *testing.T) {
 	}
 }
 
+var file4 = "www.google.com"
+
+func TestAnalyzeGoogle(t *testing.T) {
+	src := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+	)
+	httpClient := oauth2.NewClient(context.Background(), src)
+
+	module := Analyze(file4, httpClient)
+	os.RemoveAll("temp")
+	var modules []Module
+	modules = append(modules, module)
+	LoggerVerbOne(modules)
+	LoggerVerbTwo(modules)
+
+	if(module.NetScore != -1) {
+		t.Fatalf("Incorrectly parsed")
+	}
+}
+
 var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
 var endpoint2 = "https://api.github.com/repos/ben-ng/add"
 var endpoint3 = "https://api.github.com/repos/axios/axios"
