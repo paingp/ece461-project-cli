@@ -1,10 +1,14 @@
 package metrics
 
+// This function uses rest and graphQL through the GITHUB API 
+// to collect data pertaining to the Ramp Up Time, then analyzes
+// the data and returns a weighted sum of the scores
 func RampUp(jsonRes map[string]interface{}, totalComments int) float32 {
 	wiki := 0.0
 	pages := 0.0
 	discussions := 0.0
 
+	// Collecting pertinent data from GITHUB API
 	if jsonRes["has_wiki"].(bool) {
 		wiki = .15
 	}
@@ -19,6 +23,7 @@ func RampUp(jsonRes map[string]interface{}, totalComments int) float32 {
 
 	var commentsScore float32
 
+	// Socring comments count based on different ranges of comments
 	if totalComments >= 0 && totalComments <= 10{
 		commentsScore = 0.1
 	} else if totalComments <= 50{
@@ -31,5 +36,6 @@ func RampUp(jsonRes map[string]interface{}, totalComments int) float32 {
 		commentsScore = 0.4
 	}
 
+	// Returning weighted sum of aspects
 	return float32(wiki + pages + discussions + float64(commentsScore))
 }
