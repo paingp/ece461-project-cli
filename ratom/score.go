@@ -39,23 +39,33 @@ func getGithubUrl(url string) string {
 		resp, err := http.Get(npmEndpoint)
 
 		if err != nil {
-			return "Invalid"
+			return ""
 		}
 
 		if resp.StatusCode == http.StatusOK {
 			bodyBytes, err := io.ReadAll(resp.Body)
 
 			if err != nil {
-				panic(err)
+				return ""
 			}
-			bodyString := string(bodyBytes)
 
+			bodyString := string(bodyBytes)
 			resBytes := []byte(bodyString)
 			var npmRes map[string]interface{}
 			_ = json.Unmarshal(resBytes, &npmRes)
 
+			if (npmRes["bugs"] == nil){
+				metrics.Functions = append(metrics.Functions, "Module is not hosted on GitHub or link cannot be found on line "+metrics.File_line())
+				return ""
+			}
+
 			bugs := npmRes["bugs"].(map[string]interface{})
 			npmEndpoint = bugs["url"].(string)
+
+			if (npmEndpoint == ""){
+				return ""
+			}
+
 			url = strings.Replace(npmEndpoint, "/issues", "", 1)
 		}
 	}
@@ -118,6 +128,12 @@ func Analyze(url string, client *http.Client) Module {
 	//oldURL := url
 
 	gitUrl := getGithubUrl(url)
+
+	if gitUrl == "" {
+		metrics.Functions = append(metrics.Functions, "Can't find valid endpoint for input: "+url)
+		return Module{url, -1, -1, -1, -1, -1, false}
+	}
+
 	//fmt.Println(gitUrl)
 	dir := Clone(gitUrl)
 
@@ -128,7 +144,8 @@ func Analyze(url string, client *http.Client) Module {
 	resp, error := client.Get(endpoint)
 
 	if error != nil {
-		panic(error)
+		metrics.Functions = append(metrics.Functions, "HTTP GET request to  "+endpoint+" returns an error on line "+metrics.File_line())
+		return Module{url, -1, -1, -1, -1, -1, false}
 	}
 
 	//fmt.Println(Data.Repository.CommitComments.TotalCount)
@@ -137,6 +154,7 @@ func Analyze(url string, client *http.Client) Module {
 		bodyBytes, err := io.ReadAll(resp.Body)
 
 		if err != nil {
+			//log.Print("here")
 			panic(error)
 		}
 		bodyString := string(bodyBytes)
@@ -168,7 +186,8 @@ func Analyze(url string, client *http.Client) Module {
 		graphQLClient := githubv4.NewClient(client)
 		error = graphQLClient.Query(context.Background(), &Data, variables)
 		if error != nil {
-			panic(error)
+			metrics.Functions = append(metrics.Functions, "GraphQL could not create a client in goLang on line "+metrics.File_line())
+			Data.Repository.CommitComments.TotalCount = 0
 		}
 
 		//name := jsonRes["id"].(float64)
@@ -203,8 +222,7 @@ func Analyze(url string, client *http.Client) Module {
 		responsiveMaintainer = -1.0
 		license = false
 
-		lineNumb = metrics.File_line()
-		metrics.Functions = append(metrics.Functions, "Invalid endpoint / URL given could not retrieve API data! "+lineNumb)
+		metrics.Functions = append(metrics.Functions, "Invalid endpoint / URL given could not retrieve API data!")
 	}
 
 	defer resp.Body.Close()

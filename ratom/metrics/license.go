@@ -10,7 +10,6 @@ import (
 )
 
 var readme string
-var Read bool
 
 // https://stackoverflow.com/questions/71153302/how-to-set-depth-for-recursive-iteration-of-directories-in-filepath-walk-func
 func walk(path string, d fs.DirEntry, err error) error {
@@ -43,16 +42,14 @@ func License(directory string) bool {
 
 	err := filepath.WalkDir(directory, walk)
 	if err != nil {
-		Read = false
+		Functions = append(Functions, "Error while trying to find ReadMe in " + directory)
 		return false
 	}
 
 	if readme == "" {
-		Read = false
+		Functions = append(Functions, "ReadMe could be found in " + directory)
 		return false
 	}
-
-	Read = true
 
 	file, err := os.Open(readme)
 

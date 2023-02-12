@@ -68,11 +68,6 @@ func LoggerVerbTwo(output []Module) {
 	//log.Printf("\n")
 
 	for a := 0; a < len(metrics.Functions); a++ {
-
-		if a%9 == 0 {
-			log.Printf("\n")
-		}
-
 		log.Println(metrics.Functions[a])
 	}
 
