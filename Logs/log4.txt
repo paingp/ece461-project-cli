@@ -1,0 +1,48 @@
+
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://github.com/lodash/lodash 0.58318996 0.475 0.30911413 1 0.71999997 true}
+
+
+
+
+Output:
+{https://www.npmjs.com/package/browserify 0.5522359 0.35 0.29210263 1 0.71999997 true}
+
+
+
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+Function: getEndpoint called on score.go at line 125
+Function: metrics.Correctness called on score.go at line 176
+
+Function: metrics.BusFactor called on score.go at line 180
+Function: metrics.RampUp called on score.go at line 184
+Function: metrics.ResponsiveMaintainer called on score.go at line 188
+Function: metrics.License called on score.go at line 192
+Function: metrics.NetScore called on score.go at line 196
+
+Output:
+{https://www.npmjs.com/package/browserify 0.5522359 0.35 0.29210263 1 0.71999997 true}
+
+
+Command Successful:    Sat Feb 11 18:10:36 2023
+Command ran was:       ./run test
