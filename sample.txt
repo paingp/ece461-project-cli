@@ -3,4 +3,8 @@ https://www.npmjs.com/package/express
 https://github.com/nullivex/nodist
 https://github.com/lodash/lodash
 https://www.npmjs.com/package/browserify
+<<<<<<< HEAD
+=======
+https://www.npmjs.com/package/linalg.js
+>>>>>>> 4ab999199de956538b7013b5567693459152c1f7
 
