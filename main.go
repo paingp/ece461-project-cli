@@ -12,10 +12,6 @@ import (
 
 	"github.com/paingp/ece461-project-cli/ratom"
 	"github.com/paingp/ece461-project-cli/ratom/metrics"
-
-	//"time"
-	"github.com/joho/godotenv"
-	// "github.com/shurcooL/githubv4"
 	"golang.org/x/oauth2"
 )
 
@@ -34,11 +30,11 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 
-	// Load environment variables from .env file
-	err = godotenv.Load(".env")
-	if err != nil {
-		panic("Error loading .env file")
-	}
+	// // Load environment variables from .env file
+	// err = godotenv.Load(".env")
+	// if err != nil {
+	// 	panic("Error loading .env file")
+	// }
 
 	// Create a token to and HTTP client to access the GitHub API
 	src := oauth2.StaticTokenSource(
@@ -70,6 +66,7 @@ func main() {
 	// Read file line by line
 	for scanner.Scan() {
 		url := scanner.Text()
+		metrics.Functions = append(metrics.Functions, "-------------------------------------")
 		metrics.Functions = append(metrics.Functions, "For URL: "+url)
 		module := ratom.Analyze(url, httpClient)
 		lineNumb := metrics.File_line()
