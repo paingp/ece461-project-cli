@@ -73,8 +73,11 @@ int main(int argc, char *argv[]) {
         if (!fileptr) {
             free(fileptr);
             fprintf(stdout, "Command did not match any of the following: \n./run build\n./run install\n./run URL_FILE");
-            fprintf(stdout, "\nor the file could not be found in the given path.");  
-            logError(1, argv[1]);
+            fprintf(stdout, "\nor the file could not be found in the given path."); 
+
+            if (atoi(logLevel) != 0){
+                logError(1, argv[1]);
+            } 
             exit(EXIT_FAILURE);
         }
 
