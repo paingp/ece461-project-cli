@@ -32,10 +32,51 @@ func TestAnalyze(t *testing.T) {
 	}
 }
 
+var file2 = "https://www.npmjs.com/package/browserify"
+
+func TestAnalyzeNPM(t *testing.T) {
+	src := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+	)
+	httpClient := oauth2.NewClient(context.Background(), src)
+
+	module := Analyze(file2, httpClient)
+	os.RemoveAll("temp")
+	var modules []Module
+	modules = append(modules, module)
+	LoggerVerbOne(modules)
+	LoggerVerbTwo(modules)
+
+	if(module.License == false) {
+		fmt.Printf("Cannot find license")
+	}
+}
+
+var file3 = "https://www.npmjs.com/package/linalg.js"
+
+func TestAnalyzeNoGithub(t *testing.T) {
+	src := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: os.Getenv("GITHUB_TOKEN")},
+	)
+	httpClient := oauth2.NewClient(context.Background(), src)
+
+	module := Analyze(file3, httpClient)
+	os.RemoveAll("temp")
+	var modules []Module
+	modules = append(modules, module)
+	LoggerVerbOne(modules)
+	LoggerVerbTwo(modules)
+
+	if(module.NetScore != -1) {
+		t.Fatalf("Incorrectly parsed")
+	}
+}
+
 var endpoint = "https://api.github.com/repos/cloudinary/cloudinary_npm"
 var endpoint2 = "https://api.github.com/repos/ben-ng/add"
 var endpoint3 = "https://api.github.com/repos/axios/axios"
 var endpoint4 = "https://api.github.com/repos/campb474/ECE368"
+
 
 // Tests 1 - 6
 func TestBusFactor(t *testing.T) {
