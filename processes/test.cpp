@@ -87,60 +87,40 @@ int master_test() {
 
     // Getting go tests
     system("go test -cover -v ./ratom > test_output.txt");
-
-
     std::ifstream testText;
     std::string line;
     std::string coverage_reg;
     std::cmatch m;
 
+    // Using Regex to parse through complete testing file
     testText.open("test_output.txt");
     if (testText.good())
     {
         while (getline(testText, line))
         {
+            // Checking for tests ran
             std::regex_search(line.c_str(), m, std::regex("=== RUN"));
             if(!m.empty()) {
                 tests_total++;
             }
+            // Checking for tests passed
             std::regex_search(line.c_str(), m, std::regex("--- PASS:"));
             if(!m.empty()) {
                 tests_passed++;
             }
+            // Checking for code coverage
             std::regex_search(line.c_str(), m, std::regex("coverage: [0-9][0-9].[0-9]%"));
             if(!m.empty()) {
-                //printf("%s\n", m[0].str().c_str());
                 break;
             }
         }
     }
-
     testText.close();
-
-    // line = "";
-
-    // for(int i = 0; i < 5; i++) {
-    //     line += m[0].str();
-    // }
-
     char coverage[4];
-
     for(int i = 0; i < 4; i ++) {
-        //printf("%c\n", m[0].str().c_str()[i + 10]);
         coverage[i] = m[0].str().c_str()[i + 10];
     }
 
-
-    // fseek(fptr, 1053, SEEK_SET);
-    // char coverage[6];
-    // for(int i = 0; i < 4; i++) {
-    //     coverage[i] = fgetc(fptr);
-    // }
-    // coverage[4] = '%';
-
-    //system("rm temp.txt");
-
-    //int coverage = 0;
     // Outputting to stdout;
     fprintf(stdout, "Total: %d\n", tests_total);
     fprintf(stdout, "Passed: %d\n", tests_passed);
