@@ -1,6 +1,7 @@
 === RUN   TestAnalyze
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 GoLang could not find logging file!
 --- FAIL: TestAnalyze (10.67s)
 panic: open : no such file or directory [recovered]
@@ -26,6 +27,15 @@ FAIL
 =======
 --- PASS: TestAnalyze (7.72s)
 =======
+--- PASS: TestAnalyze (7.42s)
+=== RUN   TestAnalyzeNPM
+--- PASS: TestAnalyzeNPM (1.30s)
+=== RUN   TestAnalyzeNoGithub
+--- PASS: TestAnalyzeNoGithub (0.34s)
+=== RUN   TestBusFactor
+--- PASS: TestBusFactor (0.12s)
+>>>>>>> 3b5520ee0dd240fefc14b078fb90ee49ca7159cf
+=======
 --- PASS: TestAnalyze (5.95s)
 >>>>>>> 4ab999199de956538b7013b5567693459152c1f7
 === RUN   TestAnalyzeNPM
@@ -36,22 +46,33 @@ FAIL
 --- PASS: TestAnalyzeGoogle (0.00s)
 === RUN   TestBusFactor
 --- PASS: TestBusFactor (0.13s)
+>>>>>>> 4ab999199de956538b7013b5567693459152c1f7
 === RUN   TestCorrectness
 --- PASS: TestCorrectness (0.13s)
 === RUN   TestRampUp
 --- PASS: TestRampUp (0.14s)
 === RUN   TestResponsiveMaintainer
---- PASS: TestResponsiveMaintainer (0.13s)
+--- PASS: TestResponsiveMaintainer (0.12s)
 === RUN   TestNetScore
+<<<<<<< HEAD
+--- PASS: TestNetScore (0.12s)
+=======
 --- PASS: TestNetScore (0.13s)
+>>>>>>> 4ab999199de956538b7013b5567693459152c1f7
 === RUN   TestBusFactor2
 --- PASS: TestBusFactor2 (0.09s)
 === RUN   TestCorrectness2
 --- PASS: TestCorrectness2 (0.10s)
 === RUN   TestRampUp2
+<<<<<<< HEAD
+--- PASS: TestRampUp2 (0.09s)
+=== RUN   TestResponsiveMaintainer2
+--- PASS: TestResponsiveMaintainer2 (0.09s)
+=======
 --- PASS: TestRampUp2 (0.08s)
 === RUN   TestResponsiveMaintainer2
 --- PASS: TestResponsiveMaintainer2 (0.16s)
+>>>>>>> 4ab999199de956538b7013b5567693459152c1f7
 === RUN   TestNetScore2
 --- PASS: TestNetScore2 (0.10s)
 === RUN   TestBusFactor3
@@ -61,8 +82,16 @@ FAIL
 === RUN   TestRampUp3
 --- PASS: TestRampUp3 (0.12s)
 === RUN   TestResponsiveMaintainer3
---- PASS: TestResponsiveMaintainer3 (0.11s)
+--- PASS: TestResponsiveMaintainer3 (0.12s)
 === RUN   TestNetScore3
+<<<<<<< HEAD
+--- PASS: TestNetScore3 (0.14s)
+=== RUN   TestBusFactor_private
+--- PASS: TestBusFactor_private (0.06s)
+PASS
+coverage: 83.6% of statements
+ok  	github.com/paingp/ece461-project-cli/ratom	11.148s	coverage: 83.6% of statements
+=======
 --- PASS: TestNetScore3 (0.18s)
 === RUN   TestBusFactor_private
 --- PASS: TestBusFactor_private (0.08s)
