@@ -90,7 +90,7 @@ func main() {
 		if modules[a].License {
 			b = 1
 		}
-		fmt.Printf("{\"URL\":%s, \"NET_SCORE\":%1.1f, \"RAMP_UP_SCORE\":%1.1f, \"CORRECTIVENESS_SCORE\":%1.1f, \"BUS_FACTOR_SCORE\":%1.1f, \"RESPONSIVENESS_MAINTAINER_SCORE\":%1.1f, \"LICENSE SCORE\":%d}\n", modules[a].Url, modules[a].NetScore, modules[a].RampUp, modules[a].Correctness, modules[a].BusFactor, modules[a].RespMaint, b)
+		fmt.Printf("{\"URL\":\"%s\", \"NET_SCORE\":%1.1f, \"RAMP_UP_SCORE\":%1.1f, \"CORRECTNESS_SCORE\":%1.1f, \"BUS_FACTOR_SCORE\":%1.1f, \"RESPONSIVE_MAINTAINER_SCORE\":%1.1f, \"LICENSE_SCORE\":%d}\n", modules[a].Url, modules[a].NetScore, modules[a].RampUp, modules[a].Correctness, modules[a].BusFactor, modules[a].RespMaint, b)
 		//fmt.Println(modules[a])
 	}
 

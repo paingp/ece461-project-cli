@@ -18,7 +18,7 @@ func BusFactor(jsonRes map[string]interface{}) float32 {
 	
 	// Collected data from the "allow_forking" aspect
 	if jsonRes["allow_forking"].(bool) {
-		forking = .0
+		forking = 0.2
 	} else {
 		forking = 0.4
 	}
