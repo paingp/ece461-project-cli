@@ -1,92 +1,23 @@
 === RUN   TestAnalyze
-<<<<<<< HEAD
-<<<<<<< HEAD
 GoLang could not find logging file!
---- FAIL: TestAnalyze (16.69s)
+--- FAIL: TestAnalyze (10.67s)
 panic: open : no such file or directory [recovered]
 	panic: open : no such file or directory
 
 goroutine 6 [running]:
-testing.tRunner.func1.2({0x7e1f80, 0xc000421c50})
+testing.tRunner.func1.2({0x7e2f80, 0xc0005c0390})
 	/usr/lib/go-1.18/src/testing/testing.go:1389 +0x24e
 testing.tRunner.func1()
 	/usr/lib/go-1.18/src/testing/testing.go:1392 +0x39f
-panic({0x7e1f80, 0xc000421c50})
+panic({0x7e2f80, 0xc0005c0390})
 	/usr/lib/go-1.18/src/runtime/panic.go:838 +0x207
-github.com/paingp/ece461-project-cli/ratom.LoggerVerbOne({0xc000421bf0, 0x1, 0xc0002a8480?})
+github.com/paingp/ece461-project-cli/ratom.LoggerVerbOne({0xc0005c0360, 0x1, 0xc0002a8480?})
 	/home/shay/a/ng118/ECE461/ece461-project-cli/ratom/logger.go:25 +0x24c
 github.com/paingp/ece461-project-cli/ratom.TestAnalyze(0x0?)
 	/home/shay/a/ng118/ECE461/ece461-project-cli/ratom/ratom_test.go:27 +0x1ac
-testing.tRunner(0xc0001bfba0, 0x87e7c0)
+testing.tRunner(0xc0001bfd40, 0x87f928)
 	/usr/lib/go-1.18/src/testing/testing.go:1439 +0x102
 created by testing.(*T).Run
 	/usr/lib/go-1.18/src/testing/testing.go:1486 +0x35f
-FAIL	github.com/paingp/ece461-project-cli/ratom	16.709s
-=======
---- PASS: TestAnalyze (8.98s)
-=== RUN   TestBusFactor
---- PASS: TestBusFactor (0.14s)
-=== RUN   TestCorrectness
---- PASS: TestCorrectness (0.12s)
-=== RUN   TestRampUp
---- PASS: TestRampUp (0.13s)
-=== RUN   TestResponsiveMaintainer
---- PASS: TestResponsiveMaintainer (0.13s)
-=== RUN   TestNetScore
---- PASS: TestNetScore (0.14s)
-=== RUN   TestBusFactor2
---- PASS: TestBusFactor2 (0.09s)
-=== RUN   TestCorrectness2
---- PASS: TestCorrectness2 (0.10s)
-=== RUN   TestRampUp2
---- PASS: TestRampUp2 (0.10s)
-=== RUN   TestResponsiveMaintainer2
---- PASS: TestResponsiveMaintainer2 (0.11s)
-=== RUN   TestNetScore2
---- PASS: TestNetScore2 (0.09s)
-=== RUN   TestBusFactor3
---- PASS: TestBusFactor3 (0.11s)
-=== RUN   TestCorrectness3
---- PASS: TestCorrectness3 (0.12s)
-=== RUN   TestRampUp3
---- PASS: TestRampUp3 (0.12s)
-=== RUN   TestResponsiveMaintainer3
---- PASS: TestResponsiveMaintainer3 (0.11s)
-=== RUN   TestNetScore3
---- PASS: TestNetScore3 (0.11s)
-=== RUN   TestBusFactor_private
---- PASS: TestBusFactor_private (0.07s)
-PASS
-coverage: 72.4% of statements
-ok  	github.com/paingp/ece461-project-cli/ratom	(cached)	coverage: 72.4% of statements
->>>>>>> 9b6405d1e75ea4fcd517db5e939ebf58e64a6ad7
-=======
---- PASS: TestAnalyze (6.74s)
-=== RUN   TestAnalyzeNPM
---- PASS: TestAnalyzeNPM (1.06s)
-=== RUN   TestAnalyzeNoGithub
---- FAIL: TestAnalyzeNoGithub (0.33s)
-panic: interface conversion: interface {} is nil, not map[string]interface {} [recovered]
-	panic: interface conversion: interface {} is nil, not map[string]interface {}
-
-goroutine 99 [running]:
-testing.tRunner.func1.2({0x104ff4b00, 0x140012d7f20})
-	/usr/local/go/src/testing/testing.go:1396 +0x1c8
-testing.tRunner.func1()
-	/usr/local/go/src/testing/testing.go:1399 +0x378
-panic({0x104ff4b00, 0x140012d7f20})
-	/usr/local/go/src/runtime/panic.go:884 +0x204
-github.com/paingp/ece461-project-cli/ratom.getGithubUrl({0x104f092a2, 0x27})
-	/Users/matthewcampbell/Desktop/ece461-project-cli/ratom/score.go:57 +0x294
-github.com/paingp/ece461-project-cli/ratom.Analyze({0x104f092a2, 0x27}, 0x14004a2d650)
-	/Users/matthewcampbell/Desktop/ece461-project-cli/ratom/score.go:120 +0x54
-github.com/paingp/ece461-project-cli/ratom.TestAnalyzeNoGithub(0x14000003860)
-	/Users/matthewcampbell/Desktop/ece461-project-cli/ratom/ratom_test.go:63 +0xbc
-testing.tRunner(0x14000003860, 0x105063548)
-	/usr/local/go/src/testing/testing.go:1446 +0x10c
-created by testing.(*T).Run
-	/usr/local/go/src/testing/testing.go:1493 +0x300
-FAIL	github.com/paingp/ece461-project-cli/ratom	8.277s
->>>>>>> f7e548dd9bc313efc17dcc503b7528c0c4e0ec2a
+FAIL	github.com/paingp/ece461-project-cli/ratom	10.680s
 FAIL
->>>>>>> f7e548dd9bc313efc17dcc503b7528c0c4e0ec2a
