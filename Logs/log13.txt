@@ -33,3 +33,10 @@ Output:
 {https://github.com/nullivex/nodist 0.39031586 0.1 0.18875962 1 0.417 true}
 
 
+Command Successful:    Sat Feb 11 17:45:04 2023
+Command ran was:       ./run buildCommand Successful:    Sat Feb 11 17:45:09 2023
+Command ran was:       ./run installCommand Successful:    Sat Feb 11 17:45:22 2023
+Command ran was:       ./run installCommand Successful:    Sat Feb 11 17:45:40 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 17:47:03 2023
+Command ran was:       ./run testCommand Successful:    Sat Feb 11 17:49:09 2023
+Command ran was:       ./run test
