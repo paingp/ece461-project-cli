@@ -19,3 +19,8 @@ to analyze, rank, and sort based on a variety of factors.
 
 #### How To Run Application
 Simply just type in any of the commands listed under "Run Commands" section
+
+#### Citations
+1) https://stackoverflow.com/questions/71153302/how-to-set-depth-for-recursive-iteration-of-directories-in-filepath-walk-func
+2) https://rakaar.github.io/posts/2021-04-23-go-json-res-parse/
+3) https://stackoverflow.com/questions/24809287/how-do-you-get-a-golang-program-to-print-the-line-number-of-the-error-it-just-ca
