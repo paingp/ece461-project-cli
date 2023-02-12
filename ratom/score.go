@@ -1,3 +1,7 @@
+// Refer to the following links for error printing and http parsing in Golang used in this file
+		//https://stackoverflow.com/questions/24809287/how-do-you-get-a-golang-program-to-print-the-line-number-of-the-error-it-just-ca
+		//https://rakaar.github.io/posts/2021-04-23-go-json-res-parse/
+
 package ratom
 
 import (
@@ -152,10 +156,6 @@ func Analyze(url string, client *http.Client) Module {
 			panic(error)
 		}
 		bodyString := string(bodyBytes)
-
-		// Refer to the following links for error printing and http parsing in Golang used in this file
-		//https://stackoverflow.com/questions/24809287/how-do-you-get-a-golang-program-to-print-the-line-number-of-the-error-it-just-ca
-		//https://rakaar.github.io/posts/2021-04-23-go-json-res-parse/
 
 		resBytes := []byte(bodyString)
 		var jsonRes map[string]interface{}
