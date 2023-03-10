@@ -32,6 +32,7 @@ type Module struct {
 	RespMaint   float32
 	License     bool
 }
+
 //Function to get the GitHub URL from the npmurl input
 func getGithubUrl(url string) string {
 	before, after, found := strings.Cut(url, "www")
@@ -58,9 +59,9 @@ func getGithubUrl(url string) string {
 			resBytes := []byte(bodyString)
 			var npmRes map[string]interface{}
 			_ = json.Unmarshal(resBytes, &npmRes)
-			
+
 			//Checking for existence of GitHub url
-			if (npmRes["bugs"] == nil){
+			if npmRes["bugs"] == nil {
 				metrics.Functions = append(metrics.Functions, "Module is not hosted on GitHub or link cannot be found on line "+metrics.File_line())
 				return ""
 			}
@@ -68,7 +69,7 @@ func getGithubUrl(url string) string {
 			bugs := npmRes["bugs"].(map[string]interface{})
 			npmEndpoint = bugs["url"].(string)
 
-			if (npmEndpoint == ""){
+			if npmEndpoint == "" {
 				return ""
 			}
 
@@ -107,16 +108,18 @@ func Clone(repo string) string {
 
 	_, err = git.PlainClone(dir, false, &git.CloneOptions{
 		URL:          repo + ".git",
-		SingleBranch: true,
+		SingleBranch: false,
 		Depth:        1,
 	})
 
 	if err != nil {
+		metrics.Functions = append(metrics.Functions, "Can't clone "+repo+".git")
 		log.Fatal(err)
 		return "err"
 	}
 	return dir
 }
+
 //Function to find and analyze the validity of the http url input
 func Analyze(url string, client *http.Client) Module {
 	//Metric variables
