@@ -27,3 +27,12 @@ LOG_FILE: filepath to store logs
 1) https://stackoverflow.com/questions/71153302/how-to-set-depth-for-recursive-iteration-of-directories-in-filepath-walk-func
 2) https://rakaar.github.io/posts/2021-04-23-go-json-res-parse/
 3) https://stackoverflow.com/questions/24809287/how-do-you-get-a-golang-program-to-print-the-line-number-of-the-error-it-just-ca
+
+Project Instructions
+CLI for Trustworthy Modules Project Description.pdf
+
+Team Members
+Paing Khant
+Matthew Campbell
+Aditya Srikanth
+Brian Ng
