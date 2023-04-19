@@ -1,10 +1,10 @@
-# ece461-project-cli
+# NPM Module Rater
 
-This custom command line interface application takes in a file of npmjs or github urls
-to analyze, rank, and sort based on a variety of factors.
+This command line interface application takes in a file containing URLs to NPM packages or GitHub repositories and
+analyzes how useful the open source package associated with each URL is based on a number of factors.
 
 #### Ranking Factors
-1) Correctness: How correct the module’s outputs are for Sarah’s needs 
+1) Correctness: How correct the module’s outputs are for ACME corporation's needs 
 2) Bus Factor: Measurement of risk for continued maintenance of the project
 3) Responsive Maintainer: How responsive maintainers of the module are
 4) Ramp-up Time: How easy it is for engineers to learn to use the module
@@ -17,8 +17,11 @@ to analyze, rank, and sort based on a variety of factors.
 3) ./run URL_FILE: Takes in a text file of URLS and scores an analyzes them for each of the factors above
 4) ./run test: runs a test suite, tests passed/tests total, coverage and returns exit 0 on success or 1 on failures
 
-#### How To Run Application
-Simply just type in any of the commands listed under "Run Commands" section
+#### Requirement To Run Application
+Our system requires following environment variables to be provided:
+GITHUB_TOKEN: GitHub personal access token
+LOG_LEVEL: (0 means silent, 1 means informational messages, 2 means debug messages)
+LOG_FILE: filepath to store logs
 
 #### Citations
 1) https://stackoverflow.com/questions/71153302/how-to-set-depth-for-recursive-iteration-of-directories-in-filepath-walk-func
