@@ -31,8 +31,8 @@ LOG_FILE: filepath to store logs
 Project Instructions
 CLI for Trustworthy Modules Project Description.pdf
 
-Team Members
-Paing Khant
-Matthew Campbell
-Aditya Srikanth
+Team Members:\
+Paing Khant\
+Matthew Campbell\
+Aditya Srikanth\
 Brian Ng
